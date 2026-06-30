@@ -1,52 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
 
 @import "tailwindcss";
 
 @layer base {
     :root {
-        /* ===== DIARCH REAL ESTATE — LUXURY DESIGN TOKENS (HSL) ===== */
-        --background: 218 65% 7%;
-        --surface: 215 55% 13%;
-        --surface-2: 210 35% 17%;
-        --nav: 218 65% 7%;
+        /* ===== DIARCH GROUP SYSTEM (HSL) — mirrors diarchgroup.com ===== */
+        /* Navy ladder: midnight → deep → mid → charcoal */
+        --background: 218 64% 7%;      /* #060E1C midnight-navy */
+        --surface: 215 54% 13%;        /* #0F1E33 deep-navy */
+        --surface-2: 221 58% 16%;      /* #112040 navy-mid */
+        --nav: 218 64% 7%;
 
-        --foreground: 37 26% 88%;
-        --muted-text: 216 15% 60%;
+        --foreground: 38 26% 88%;      /* #E8E2D8 ink */
+        --foreground-2: 43 23% 72%;    /* #C8BFA8 ink-2 */
+        --muted-text: 216 15% 60%;     /* #8A96A8 silver */
 
-        --gold: 44 54% 54%;
-        --gold-hover: 50 86% 72%;
-        --gold-pressed: 40 49% 44%;
-        --emerald: 155 61% 26%;
+        /* Brand gold (NOT lemon) — C9A84C with light/dark stops */
+        --gold: 44 54% 54%;            /* #C9A84C brand-gold */
+        --gold-hover: 50 86% 72%;      /* #F5E17A gold-light */
+        --gold-pressed: 40 49% 44%;    /* #A8843A gold-dark */
+        --brass-deep: 40 49% 44%;      /* #A8843A */
 
-        --card: 215 55% 13%;
-        --card-foreground: 37 26% 88%;
+        /* Light surface — Diarch ivory, kept for the architect's-paper band */
+        --sandstone: 36 33% 96%;       /* #F8F5F0 ivory */
+        --sandstone-2: 38 30% 92%;     /* #E8E2D8 off-white */
+        --sandstone-ink: 215 54% 13%;  /* #0F1E33 deep-navy text on ivory */
+        --sandstone-muted: 210 22% 36%;
+
+        --emerald: 156 61% 26%;        /* #1A6B4A */
+
+        --card: 215 54% 13%;
+        --card-foreground: 38 26% 88%;
         --popover: 221 58% 16%;
-        --popover-foreground: 37 26% 88%;
+        --popover-foreground: 38 26% 88%;
         --primary: 44 54% 54%;
-        --primary-foreground: 218 65% 7%;
-        --secondary: 210 35% 17%;
-        --secondary-foreground: 37 26% 88%;
-        --muted: 215 40% 18%;
+        --primary-foreground: 218 64% 7%;
+        --secondary: 221 58% 16%;
+        --secondary-foreground: 38 26% 88%;
+        --muted: 215 50% 15%;
         --muted-foreground: 216 15% 60%;
-        --accent: 155 61% 26%;
-        --accent-foreground: 37 26% 90%;
-        --destructive: 0 62% 45%;
-        --destructive-foreground: 37 26% 92%;
-        --border: 215 30% 22%;
-        --input: 215 30% 22%;
+        --accent: 156 61% 26%;
+        --accent-foreground: 38 28% 90%;
+        --destructive: 0 73% 47%;      /* #CC2222 news-red */
+        --destructive-foreground: 38 30% 92%;
+        --border: 210 35% 17%;         /* #1C2B3A charcoal */
+        --input: 210 35% 17%;
         --ring: 44 54% 54%;
-        --radius: 0.5rem;
+        --radius: 0.25rem;             /* tight, architectural */
 
-        --gradient-hero: linear-gradient(160deg, hsl(218 65% 7%) 0%, hsl(215 55% 11%) 55%, hsl(221 50% 9%) 100%);
-        --gradient-gold: linear-gradient(135deg, hsl(40 49% 44%), hsl(44 54% 54%) 45%, hsl(50 70% 64%));
-        --gradient-emerald: linear-gradient(150deg, hsl(215 55% 13%), hsl(155 50% 18%));
-        --gradient-card: linear-gradient(160deg, hsl(215 55% 14%), hsl(218 60% 9%));
+        --gradient-hero: radial-gradient(ellipse 120% 90% at 70% 8%, hsl(215 54% 13%) 0%, hsl(218 62% 9%) 55%, hsl(218 70% 5%) 100%);
+        --gradient-gold: linear-gradient(135deg, hsl(40 49% 44%), hsl(44 54% 54%) 45%, hsl(50 86% 72%));
+        --gradient-card: linear-gradient(165deg, hsl(215 54% 14%), hsl(218 64% 7%));
 
-        --shadow-gold: 0 8px 30px hsl(44 54% 54% / 0.3);
-        --shadow-card: 0 18px 50px -20px hsl(218 70% 3% / 0.8);
-        --shadow-elev: 0 24px 70px -25px hsl(218 70% 2% / 0.85);
+        --shadow-gold: 0 6px 26px hsl(44 54% 50% / 0.22);
+        --shadow-card: 0 22px 60px -28px hsl(218 80% 2% / 0.85);
+        --shadow-elev: 0 30px 80px -30px hsl(218 80% 1% / 0.9);
 
         --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+
+        /* Diarch gold hairline (matches --line rgba(201,168,76,.22)) */
+        --line: hsl(44 54% 54% / 0.22);
+        --line-soft: hsl(44 54% 54% / 0.10);
+
+        /* faint mandala grid substrate, drawn in gold hairlines */
+        --mandala-line: hsl(44 54% 54% / 0.06);
     }
 }
 
@@ -54,6 +71,7 @@
     --color-border: hsl(var(--border));
     --color-background: hsl(var(--background));
     --color-foreground: hsl(var(--foreground));
+    --color-foreground-2: hsl(var(--foreground-2));
     --color-card: hsl(var(--card));
     --color-card-foreground: hsl(var(--card-foreground));
     --color-popover: hsl(var(--popover));
@@ -73,14 +91,18 @@
     --color-gold: hsl(var(--gold));
     --color-gold-hover: hsl(var(--gold-hover));
     --color-gold-pressed: hsl(var(--gold-pressed));
+    --color-brass-deep: hsl(var(--brass-deep));
     --color-emerald: hsl(var(--emerald));
     --color-nav: hsl(var(--nav));
     --color-surface: hsl(var(--surface));
     --color-surface-2: hsl(var(--surface-2));
-    --radius-sm: calc(var(--radius) - 4px);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) + 4px);
+    --color-sandstone: hsl(var(--sandstone));
+    --color-sandstone-2: hsl(var(--sandstone-2));
+    --color-sandstone-ink: hsl(var(--sandstone-ink));
+    --radius-sm: var(--radius);
+    --radius-md: calc(var(--radius) + 1px);
+    --radius-lg: calc(var(--radius) + 3px);
+    --radius-xl: calc(var(--radius) + 6px);
 }
 
 @layer base {
@@ -93,15 +115,20 @@
     body {
         background-color: hsl(var(--background));
         color: hsl(var(--foreground));
-        font-family: 'Inter', sans-serif;
+        font-family: 'Playfair Display', 'Tiro Devanagari Hindi', serif;
         font-size: 16px;
         line-height: 1.7;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
-    h1, h2 {
-        font-family: 'Playfair Display', serif;
+    h1, h2, h3 {
+        font-family: 'Playfair Display', 'Tiro Devanagari Hindi', serif;
+    }
+
+    /* Hindi script gets the matched Devanagari serif */
+    :lang(hi) {
+        font-family: 'Tiro Devanagari Hindi', serif;
     }
 
     ::selection {
@@ -117,13 +144,31 @@
         border: 2px solid hsl(var(--background));
     }
     ::-webkit-scrollbar-thumb:hover { background: hsl(var(--gold-pressed)); }
+
+    :focus-visible {
+        outline: 2px solid hsl(var(--gold));
+        outline-offset: 3px;
+    }
 }
 
 @layer components {
-    .font-display { font-family: 'Playfair Display', serif; }
-    .font-serif-italic { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    /* Diarch Group voice: Playfair display + body, Montserrat labels, JetBrains Mono counters */
+    .font-display { font-family: 'Playfair Display', 'Tiro Devanagari Hindi', serif; }
+    .font-serif-italic { font-family: 'Playfair Display', serif; font-style: italic; }
+    .font-cormorant { font-family: 'Playfair Display', serif; font-style: italic; }
+    .font-body { font-family: 'Playfair Display', 'Tiro Devanagari Hindi', serif; }
+    /* Montserrat — the uppercase tracked label voice (caps) */
     .font-mont { font-family: 'Montserrat', sans-serif; }
-    .font-body { font-family: 'Inter', sans-serif; }
+    .lapidary { font-family: 'Montserrat', sans-serif; font-weight: 500; }
+
+    /* JetBrains Mono — the 01 / 02 counter + spec voice */
+    .font-mono,
+    .counter {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        font-variant-numeric: tabular-nums;
+    }
 
     .eyebrow {
         font-family: 'Montserrat', sans-serif;
@@ -138,9 +183,17 @@
         font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
-        font-size: 17px;
+        letter-spacing: 0.14em;
+        font-size: 16px;
         color: hsl(var(--foreground));
+    }
+
+    /* directional marker: NE / आग्नेय etc. — encodes real Vastu orientation */
+    .disha {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: hsl(var(--gold));
     }
 
     .text-gold { color: hsl(var(--gold)); }
@@ -151,65 +204,109 @@
     .bg-nav { background-color: hsl(var(--nav)); }
 
     .gold-gradient-text {
-        background: linear-gradient(120deg, hsl(40 49% 50%), hsl(50 80% 70%));
+        background: linear-gradient(120deg, hsl(38 52% 50%), hsl(44 72% 72%));
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    .text-ink-2 { color: hsl(var(--foreground-2)); }
+    .border-line { border-color: var(--line); }
 
     .container-lux {
         width: 100%;
         max-width: 1280px;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    @media (min-width: 640px) {
+        .container-lux { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+        .container-lux { padding-left: 2rem; padding-right: 2rem; }
     }
 
     .glass-nav {
-        background: hsl(218 65% 7% / 0.72);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid hsl(var(--gold) / 0.18);
+        background: hsl(224 52% 8% / 0.78);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-bottom: 1px solid hsl(var(--gold) / 0.16);
     }
 
     .hairline {
         height: 1px;
-        background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.5), transparent);
+        background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.45), transparent);
+    }
+
+    /* The faint 9-square mandala grid substrate, behind dark sections */
+    .mandala-grid {
+        background-image:
+            linear-gradient(to right, var(--mandala-line) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--mandala-line) 1px, transparent 1px);
+        background-size: 11.11% 11.11%;
+    }
+
+    /* ===== SANDSTONE BAND — the one warm light surface (dark-on-light) ===== */
+    .section-sand {
+        background-color: hsl(var(--sandstone));
+        color: hsl(var(--sandstone-ink));
+        background-image:
+            linear-gradient(to right, hsl(215 54% 13% / 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, hsl(215 54% 13% / 0.05) 1px, transparent 1px);
+        background-size: 11.11% 11.11%;
+    }
+    .section-sand .eyebrow,
+    .section-sand .disha { color: hsl(var(--brass-deep)); }
+    .section-sand .text-gold { color: hsl(var(--brass-deep)); }
+    .section-sand .text-cream { color: hsl(var(--sandstone-ink)); }
+    .section-sand .text-silver,
+    .section-sand .sand-muted { color: hsl(var(--sandstone-muted)); }
+    .section-sand .hairline {
+        background: linear-gradient(90deg, transparent, hsl(var(--brass-deep) / 0.4), transparent);
     }
 }
 
 @layer utilities {
     .shadow-gold { box-shadow: var(--shadow-gold); }
     .shadow-card { box-shadow: var(--shadow-card); }
+    .shadow-elev { box-shadow: var(--shadow-elev); }
     .bg-gradient-hero { background: var(--gradient-hero); }
     .bg-gradient-gold { background: var(--gradient-gold); }
-    .bg-gradient-emerald { background: var(--gradient-emerald); }
     .bg-gradient-card { background: var(--gradient-card); }
 
-    @keyframes shimmer-drift {
-        0%   { transform: translate(0, 0) scale(1); opacity: 0.5; }
-        50%  { transform: translate(2%, -2%) scale(1.08); opacity: 0.8; }
-        100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+    /* Brahmasthan: the slow breath of the mandala centre */
+    @keyframes brahma-breathe {
+        0%, 100% { opacity: 0.55; transform: scale(1); }
+        50%      { opacity: 0.95; transform: scale(1.04); }
     }
-    .animate-shimmer { animation: shimmer-drift 12s var(--ease-lux) infinite; }
-
-    @keyframes float-particle {
-        0%   { transform: translateY(0) translateX(0); opacity: 0; }
-        10%  { opacity: 0.8; }
-        90%  { opacity: 0.6; }
-        100% { transform: translateY(-120px) translateX(20px); opacity: 0; }
-    }
+    .animate-brahma { animation: brahma-breathe 6s var(--ease-lux) infinite; }
 
     @keyframes spin-slow {
         from { transform: rotate(0deg); }
         to   { transform: rotate(360deg); }
     }
-    .animate-spin-slow { animation: spin-slow 60s linear infinite; }
+    .animate-spin-slow { animation: spin-slow 90s linear infinite; }
 
     @keyframes pulse-orb {
-        0%, 100% { box-shadow: 0 0 0 0 hsl(44 54% 54% / 0.45); }
-        50%      { box-shadow: 0 0 0 16px hsl(44 54% 54% / 0); }
+        0%, 100% { box-shadow: 0 0 0 0 hsl(40 50% 53% / 0.45); }
+        50%      { box-shadow: 0 0 0 14px hsl(40 50% 53% / 0); }
     }
-    .animate-pulse-orb { animation: pulse-orb 2.6s var(--ease-lux) infinite; }
+    .animate-pulse-orb { animation: pulse-orb 2.8s var(--ease-lux) infinite; }
+
+    /* draw-on reveal for mandala strokes */
+    @keyframes draw-stroke {
+        from { stroke-dashoffset: var(--len, 1200); }
+        to   { stroke-dashoffset: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.001ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.001ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
 }

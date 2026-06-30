@@ -5,9 +5,15 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { copy } from '@/data/content';
 
-const Diamond = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" className="text-gold" aria-hidden="true">
-    <path d="M12 2 L22 12 L12 22 L2 12 Z" fill="currentColor" />
+// 9-square mandala mark — the brand glyph
+const MandalaMark = ({ className = '' }) => (
+  <svg width="26" height="26" viewBox="0 0 30 30" className={`text-gold ${className}`} fill="none" stroke="currentColor" aria-hidden="true">
+    <rect x="1" y="1" width="28" height="28" strokeWidth="1.4" />
+    <line x1="11" y1="1" x2="11" y2="29" strokeWidth="0.8" strokeOpacity="0.6" />
+    <line x1="20" y1="1" x2="20" y2="29" strokeWidth="0.8" strokeOpacity="0.6" />
+    <line x1="1" y1="11" x2="29" y2="11" strokeWidth="0.8" strokeOpacity="0.6" />
+    <line x1="1" y1="20" x2="29" y2="20" strokeWidth="0.8" strokeOpacity="0.6" />
+    <rect x="11" y="11" width="9" height="9" fill="currentColor" fillOpacity="0.85" stroke="none" />
   </svg>
 );
 
@@ -40,19 +46,20 @@ export const Navbar = () => {
       }`}
     >
       <nav className="container-lux flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <Diamond />
-          <span className="font-display text-lg md:text-xl font-bold tracking-wide text-cream">
-            DIARCH <span className="text-gold">REAL ESTATE</span>
+        <Link to="/" className="group flex items-center gap-3">
+          <MandalaMark className="transition-transform duration-500 group-hover:rotate-90" />
+          <span className="leading-none">
+            <span className="lapidary block text-lg tracking-[0.3em] text-cream md:text-xl">DIARCH</span>
+            <span className="lapidary block text-[9px] tracking-[0.42em] text-gold">REAL ESTATE · BIHAR</span>
           </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="font-mont text-[13px] uppercase tracking-[0.1em] text-silver hover:text-gold transition-colors duration-300"
+              className="lapidary text-[13px] uppercase tracking-[0.2em] text-silver hover:text-gold transition-colors duration-300"
             >
               {l.label}
             </Link>
