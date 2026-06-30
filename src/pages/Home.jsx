@@ -132,15 +132,11 @@ export default function Home() {
       <section className="py-20 md:py-28">
         <div className="container-lux">
           <ScrollReveal>
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end">
-              <div className="lg:col-span-4">
-                <Eyebrow>The Diarch Standard</Eyebrow>
-              </div>
-              <div className="lg:col-span-8">
-                <h2 className="font-display text-4xl font-medium leading-tight text-cream sm:text-5xl">
-                  Built to a standard,<br className="hidden sm:block" /> never to a budget.
-                </h2>
-              </div>
+            <div className="max-w-2xl">
+              <Eyebrow>The Diarch Standard</Eyebrow>
+              <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-cream sm:text-5xl">
+                Built to a standard,<br className="hidden sm:block" /> never to a budget.
+              </h2>
             </div>
           </ScrollReveal>
 
