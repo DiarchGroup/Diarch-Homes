@@ -6,6 +6,8 @@ import {
   IndianRupee, Ruler, Compass, Check,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { JsonLd } from '@/components/Seo';
+import { projectSchema } from '@/data/seo';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { getProjectBySlug, projects } from '@/data/projects';
 import { IMAGES } from '@/lib/images';
@@ -28,10 +30,19 @@ export default function ProjectDetail() {
 
   return (
     <div>
+      <JsonLd data={projectSchema(project)} />
       {/* Full-screen hero */}
       <section className="relative flex min-h-[80vh] items-end overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <img src={project.image} alt={project.name} className="h-full w-full object-cover" />
+          <img
+            src={project.image}
+            alt={`${project.name} — ${project.type.toLowerCase()} in ${project.location}`}
+            width={1920}
+            height={1080}
+            fetchPriority="high"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
         </div>
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/60 to-background/30" />
         <div className="container-lux pb-16 pt-32">
@@ -59,7 +70,15 @@ export default function ProjectDetail() {
           <div className="flex snap-x gap-4 overflow-x-auto pb-4">
             {gallery.map((g, i) => (
               <div key={i} className="relative h-56 w-80 shrink-0 snap-start overflow-hidden rounded-xl border border-border">
-                <img src={g} alt={`${project.name} view ${i + 1}`} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+                <img
+                  src={g}
+                  alt={`${project.name} in ${project.location} — view ${i + 1}`}
+                  width={640}
+                  height={448}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
               </div>
             ))}
           </div>

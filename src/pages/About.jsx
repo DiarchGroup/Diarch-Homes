@@ -6,8 +6,8 @@ import { ScrollReveal, StaggerGroup, StaggerItem } from '@/components/ScrollReve
 import { IMAGES } from '@/lib/images';
 
 const timeline = [
-  { year: '2009', title: 'The Foundation', desc: 'Diarch Group is founded in Bihar with a vision for ethical, quality construction.' },
-  { year: '2014', title: 'First Township', desc: 'Launch of our first gated residential community, setting new regional standards.' },
+  { year: '2014', title: 'The Foundation', desc: 'Diarch Group is founded in Bihar with a vision for ethical, quality construction.' },
+  { year: '2016', title: 'First Township', desc: 'Launch of our first gated residential community, setting new regional standards.' },
   { year: '2018', title: 'Vastu Certification', desc: 'Introduced expert-certified Vastu design across the entire portfolio.' },
   { year: '2021', title: 'Smart Townships', desc: 'Pioneered integrated smart-city infrastructure in Bihar.' },
   { year: '2024', title: '₹500Cr+ Portfolio', desc: 'Crossed ₹500 crore in portfolio value across 12 signature projects.' },
@@ -35,7 +35,15 @@ export default function About() {
         <div className="container-lux grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
           <ScrollReveal className="lg:col-span-5">
             <div className="relative overflow-hidden rounded-2xl border border-gold/20">
-              <img src={IMAGES.founder} alt="Ranjan Kumar Ojha, Founder" className="w-full object-cover object-top" />
+              <img
+                src={IMAGES.founder}
+                alt="Ranjan Kumar Ojha, Founder and Chairman of Diarch Group, Patna"
+                width={800}
+                height={1000}
+                loading="lazy"
+                decoding="async"
+                className="w-full object-cover object-top"
+              />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background to-transparent p-6">
                 <p className="font-display text-xl font-bold text-cream">Ranjan Kumar Ojha</p>
                 <p className="font-mont text-xs uppercase tracking-wider text-gold">Founder & Chairman, Diarch Group</p>
@@ -63,7 +71,7 @@ export default function About() {
         <div className="container-lux">
           <ScrollReveal className="max-w-2xl">
             <span className="eyebrow">Our Journey</span>
-            <h2 className="mt-3 font-display text-3xl font-bold text-cream sm:text-4xl">A Decade and a Half of Trust</h2>
+            <h2 className="mt-3 font-display text-3xl font-bold text-cream sm:text-4xl">A Decade of Trust</h2>
           </ScrollReveal>
 
           <div className="relative mt-12 pl-8">

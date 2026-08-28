@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef, useSyncExternalStore } from 'react';
 
 const makeDots = (count) =>
   Array.from({ length: count }).map(() => ({
@@ -10,11 +10,16 @@ const makeDots = (count) =>
     opacity: 0.25 + Math.random() * 0.5,
   }));
 
+const subscribe = () => () => {};
+
 // Subtle floating ambient gold dots (CSS-only, performant)
 export const GoldParticles = ({ count = 22 }) => {
   const dotsRef = useRef(null);
+  // Random positions can't match between prerendered HTML and hydration, so the
+  // decorative dots only appear after the client takes over.
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
   if (!dotsRef.current) dotsRef.current = makeDots(count);
-  const dots = dotsRef.current;
+  const dots = mounted ? dotsRef.current : [];
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">

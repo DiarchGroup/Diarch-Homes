@@ -3,6 +3,33 @@ import { IMAGES } from '@/lib/images';
 
 export const projects = [
   {
+    // Facts below come from the SEO fix plan (27 Aug 2026); the fields marked
+    // TODO(diarch) were not in it — confirm before launch.
+    slug: 'vaidic-village',
+    name: 'Vaidic Village',
+    location: 'Naubatpur, Patna',
+    type: 'RESIDENTIAL PLOTS',
+    status: 'Under Construction', // TODO(diarch): confirm
+    category: 'Affordable', // TODO(diarch): confirm positioning
+    rera: 'Registered — number on request', // TODO(diarch): add RERA number
+    priceRange: 'Price on request', // TODO(diarch): add price band
+    area: '3BHK & 4BHK plot options',
+    possession: 'On request', // TODO(diarch): add possession date
+    tagline: 'RERA-registered residential plots in Naubatpur, Patna.',
+    metaDescription:
+      'Vaidic Village by Diarch Homes — RERA-registered residential plots in Naubatpur, Patna, with 3BHK and 4BHK plot options on a Vastu-planned layout.',
+    image: IMAGES.township,
+    description:
+      'Vaidic Village is a RERA-registered plotted township in Naubatpur, Patna, offering 3BHK and 4BHK plot options on a Vastu-planned layout with wide internal roads and underground utilities — ready for you to build the home you envision.',
+    highlights: [
+      '3BHK & 4BHK plot configurations',
+      'Vastu-planned plot demarcation',
+      'RERA-registered development',
+      'Gated, fully-developed layout',
+    ],
+    amenities: ['Wide Roads', 'Street Lighting', 'Park', 'Gated Entry', 'Underground Cabling', 'Water Supply', 'Drainage', 'Security'],
+  },
+  {
     slug: 'diarch-imperial-greens',
     name: 'Diarch Imperial Greens',
     location: 'Patna, Bihar',

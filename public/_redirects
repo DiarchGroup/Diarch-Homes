@@ -1,0 +1,11 @@
+# 301s from the old WordPress URLs so their rankings carry over.
+# Confirm the full list in Google Search Console → Pages and add any missing ones.
+# Netlify format. On Vercel use vercel.json "redirects"; on Apache use .htaccess.
+/about-us        /about      301!
+/contact-us      /contact    301!
+/our-services    /projects   301!
+/services        /projects   301!
+/home            /           301!
+
+# SPA fallback — static prerendered files are served first when they exist.
+/*               /index.html 200

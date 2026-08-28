@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import { SITE } from '@/data/seo';
 
-const WA_LINK = 'https://wa.me/919229266955?text=Hello%20Diarch%20Real%20Estate';
+const WA_LINK = SITE.whatsapp;
 
 export const WhatsAppButton = () => (
   <motion.a

@@ -7,6 +7,7 @@ import {
 } from '@/components/ui/select';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { projects } from '@/data/projects';
+import { SITE } from '@/data/seo';
 
 const UnderlineInput = ({ value, onChange, placeholder, type = 'text', className = '' }) => (
   <input
@@ -55,6 +56,13 @@ export default function Contact() {
             <ScrollReveal className="lg:col-span-7 lg:pr-20">
               <p className="font-mont text-[11px] uppercase tracking-[0.2em] text-silver">
                 — Send Us a Note
+              </p>
+              <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-cream sm:text-5xl">
+                Contact Diarch Homes in Patna, Bihar
+              </h1>
+              <p className="mt-4 max-w-lg font-body text-base text-silver">
+                Book a site visit, request a brochure, or speak with a relationship manager about
+                our RERA-registered projects across Bihar.
               </p>
 
               <div className="mt-14 space-y-10">
@@ -120,10 +128,12 @@ export default function Contact() {
                   <div>
                     <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-5">Group Office</p>
                     <p className="font-display text-xl text-cream leading-relaxed">
-                      H.N.-28, Vasant Vihar Colony<br />
-                      Opp. Tapasaya Complex<br />
-                      Boring Road, Patna<br />
-                      Bihar – 800001, India
+                      {SITE.addressLines.map((line, i) => (
+                        <React.Fragment key={line}>
+                          {line}
+                          {i < SITE.addressLines.length - 1 && <br />}
+                        </React.Fragment>
+                      ))}
                     </p>
                   </div>
 
@@ -132,20 +142,20 @@ export default function Contact() {
                   <div>
                     <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-4">Email</p>
                     <a
-                      href="mailto:info@diarchgroup.com"
+                      href={`mailto:${SITE.email}`}
                       className="font-body text-base text-gold underline underline-offset-4 hover:text-gold-hover transition-colors duration-200"
                     >
-                      info@diarchgroup.com
+                      {SITE.email}
                     </a>
                   </div>
 
                   <div>
                     <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-4">Phone</p>
                     <a
-                      href="tel:+919229266955"
+                      href={SITE.phoneHref}
                       className="font-body text-base text-gold underline underline-offset-4 hover:text-gold-hover transition-colors duration-200"
                     >
-                      +91 92292 66955
+                      {SITE.phoneDisplay}
                     </a>
                   </div>
 
