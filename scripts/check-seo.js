@@ -12,6 +12,9 @@ const { ROUTES, SITE } = await import(
 
 const sitemap = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
 assert.ok(fs.existsSync(path.join(dist, 'robots.txt')), 'robots.txt missing');
+// Referenced by every og:image tag and by the organization schema's logo.
+assert.ok(fs.existsSync(path.join(dist, 'og-image.jpg')), 'og-image.jpg missing');
+assert.ok(fs.existsSync(path.join(dist, 'logo.png')), 'logo.png missing');
 
 for (const route of Object.keys(ROUTES)) {
   const file = route === '/' ? 'index.html' : path.join(route.slice(1), 'index.html');
