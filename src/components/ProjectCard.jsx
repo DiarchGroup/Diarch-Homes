@@ -53,6 +53,7 @@ export const ProjectCard = ({ project, index = 0 }) => {
 
         <Link
           to={`/projects/${project.slug}`}
+          aria-label={`Explore plan for ${project.name}`}
           className="group/link mt-5 inline-flex items-center gap-2 lapidary text-[11px] uppercase tracking-[0.2em] text-gold"
         >
           Explore Plan

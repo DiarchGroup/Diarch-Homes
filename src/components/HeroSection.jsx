@@ -71,8 +71,8 @@ export const HeroSection = () => {
               <img
                 src={IMAGES.hero}
                 alt="Diarch Imperial Greens, a 42-acre luxury township in Patna, Bihar"
-                width={1600}
-                height={1000}
+                width={1264}
+                height={848}
                 fetchPriority="high"
                 decoding="async"
                 className="h-full w-full object-cover"
