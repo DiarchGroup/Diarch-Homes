@@ -62,7 +62,7 @@ export default function Contact() {
               </h1>
               <p className="mt-4 max-w-lg font-body text-base text-silver">
                 Book a site visit, request a brochure, or speak with a relationship manager about
-                our RERA-registered projects across Bihar.
+                our projects and their registration details across Bihar.
               </p>
 
               <div className="mt-14 space-y-10">

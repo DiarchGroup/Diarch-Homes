@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { JsonLd } from '@/components/Seo';
-import { projectSchema } from '@/data/seo';
+import { projectBreadcrumbSchema, projectSchema } from '@/data/seo';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { getProjectBySlug, projects } from '@/data/projects';
 import { IMAGES } from '@/lib/images';
@@ -25,12 +25,13 @@ export default function ProjectDetail() {
     { icon: CalendarClock, label: 'Possession', value: project.possession },
     { icon: Ruler, label: 'Type', value: project.type },
     { icon: MapPin, label: 'Location', value: project.location },
-    { icon: ShieldCheck, label: 'RERA No.', value: project.rera },
+    { icon: ShieldCheck, label: project.reraRegistered === false ? 'Registration' : 'RERA No.', value: project.rera },
   ];
 
   return (
     <div>
       <JsonLd data={projectSchema(project)} />
+      <JsonLd data={projectBreadcrumbSchema(project)} />
       {/* Full-screen hero */}
       <section className="relative flex min-h-[80vh] items-end overflow-hidden">
         <div className="absolute inset-0 -z-10">
@@ -47,12 +48,18 @@ export default function ProjectDetail() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/60 to-background/30" />
         <div className="container-lux pb-16 pt-32">
           <ScrollReveal>
-            <Link to="/projects" className="mb-6 inline-flex items-center gap-2 font-mont text-xs uppercase tracking-wider text-gold hover:text-gold-hover">
-              <ArrowLeft strokeWidth={1.5} className="h-4 w-4" /> All Projects
-            </Link>
+            <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 font-mont text-xs uppercase tracking-wider text-gold">
+              <Link to="/" className="hover:text-gold-hover">Home</Link>
+              <span aria-hidden="true">/</span>
+              <Link to="/projects" className="inline-flex items-center gap-2 hover:text-gold-hover">
+                <ArrowLeft strokeWidth={1.5} className="h-4 w-4" /> Projects
+              </Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page" className="truncate text-silver">{project.name}</span>
+            </nav>
             <div className="flex flex-wrap items-center gap-3">
               <span className="rounded-full bg-emerald/90 px-3 py-1 font-mont text-[10px] font-semibold uppercase tracking-wider text-foreground flex items-center gap-1">
-                <ShieldCheck strokeWidth={1.5} className="h-3 w-3" /> RERA {project.rera}
+                <ShieldCheck strokeWidth={1.5} className="h-3 w-3" /> {project.reraRegistered === false ? project.rera : `RERA ${project.rera}`}
               </span>
               <span className="font-mont text-[11px] font-semibold uppercase tracking-[0.14em] text-gold">{project.type}</span>
             </div>

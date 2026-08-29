@@ -23,7 +23,7 @@ const vastuFeatures = [
 ];
 
 const standards = [
-  { title: 'RERA Registered', desc: 'Every project fully registered, with complete legal transparency from booking to possession.' },
+  { title: 'Project Registration', desc: 'Registration status and official details are disclosed per project before booking.' },
   { title: 'Smart Township Infrastructure', desc: 'Fibre connectivity, app-controlled security, and metered smart utilities throughout.' },
   { title: 'Vastu-Certified Design', desc: 'Layouts reviewed against the mandala and signed off by practising Vastu experts.' },
   { title: 'Premium Amenities', desc: 'Clubhouses, pools, landscaped parks, and curated community living as standard.' },
@@ -87,7 +87,7 @@ export default function Home() {
                   Vastu-certified,<br className="hidden sm:block" /> down to the doorway.
                 </h2>
                 <p className="mt-5 max-w-lg font-body text-base leading-relaxed sand-muted">
-                  Alongside RERA registration and on-time delivery, every Diarch layout is
+                  Alongside clear registration disclosures, every Diarch layout is
                   reviewed against the nine-square mandala and signed off by a Vastu specialist —
                   so orientation is one less thing for your family to worry about.
                 </p>

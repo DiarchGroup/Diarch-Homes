@@ -37,25 +37,25 @@ const staticRoutes = {
     title: 'Diarch · Luxury Homes & Townships in Bihar',
     // Verbatim from the fix plan (Steps 2 and 6).
     description:
-      'Diarch Homes builds RERA-registered luxury townships and residential plots in Patna, Bihar. Explore Vaidic Village in Naubatpur — 3BHK & 4BHK plot options.',
+      'Diarch Homes builds luxury townships and residential plots in Patna, Bihar. Explore Vaidic Village in Naubatpur — 3BHK & 4BHK plot options.',
     ogTitle: 'Diarch Homes | Luxury Townships & Plots in Patna, Bihar',
     ogDescription:
-      'RERA-registered residential townships and plots in Patna. Explore Vaidic Village in Naubatpur.',
+      'Residential townships and plots in Patna. Explore Vaidic Village in Naubatpur.',
   },
   '/projects': {
-    title: 'Projects | RERA-Registered Townships, Apartments & Plots in Bihar',
+    title: 'Projects | Townships, Apartments & Plots in Bihar',
     description:
       'Explore Diarch Homes projects across Patna, Gaya, Muzaffarpur, Hajipur and Begusarai — Vastu-aligned townships, premium apartments, garden villas and residential plots.',
   },
   '/about': {
     title: 'About Diarch Homes | Property Developer in Patna, Bihar',
     description:
-      'Diarch Homes is part of the Diarch Group, founded in 2014 — a Bihar developer of RERA-registered, Vastu-certified townships, residences and residential plots.',
+      'Diarch Homes is part of the Diarch Group, founded in 2014 — a Bihar developer of townships, residences and residential plots.',
   },
   '/contact': {
     title: 'Contact Diarch Homes | Book a Site Visit in Patna, Bihar',
     description:
-      'Contact Diarch Homes — Boring Road, Patna. Book a site visit, request a brochure or speak with a relationship manager about our RERA-registered projects in Bihar.',
+      'Contact Diarch Homes — Boring Road, Patna. Book a site visit, request a brochure or discuss project registration details with a relationship manager.',
   },
 };
 
@@ -108,4 +108,14 @@ export const projectSchema = (p) => ({
     addressCountry: 'IN',
   },
   amenityFeature: p.amenities.map((a) => ({ '@type': 'LocationFeatureSpecification', name: a })),
+});
+
+export const projectBreadcrumbSchema = (p) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Projects', item: `${SITE.url}/projects` },
+    { '@type': 'ListItem', position: 3, name: p.name, item: `${SITE.url}/projects/${p.slug}` },
+  ],
 });

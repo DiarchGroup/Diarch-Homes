@@ -5,7 +5,7 @@ import { StatCounter } from '@/components/StatCounter';
 const stats = [
   { value: 500, prefix: '₹', suffix: 'Cr+', label: 'Portfolio Value' },
   { value: 12, suffix: '', label: 'Signature Plans' },
-  { value: 100, suffix: '%', label: 'RERA Registered' },
+  { value: 7, suffix: '', label: 'Project Listings' },
   { value: 3, suffix: '', label: 'Smart Townships' },
 ];
 

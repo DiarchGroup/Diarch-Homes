@@ -83,9 +83,7 @@ export const Footer = () => (
         <p className="font-body text-xs text-silver">
           © {new Date().getFullYear()} Diarch Real Estate · A Diarch Group Company. All rights reserved.
         </p>
-        <p className="font-body text-xs text-silver">
-          RERA Registration: <span className="text-gold">BRERA-XXXX-XXXXX</span>
-        </p>
+        <p className="font-body text-xs text-silver">Registration details are listed per project.</p>
       </div>
     </div>
   </footer>
