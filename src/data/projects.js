@@ -11,20 +11,21 @@ export const projects = [
     type: 'RESIDENTIAL PLOTS',
     status: 'Under Construction', // TODO(diarch): confirm
     category: 'Affordable', // TODO(diarch): confirm positioning
-    rera: 'Registered — number on request', // TODO(diarch): add RERA number
+    rera: 'Registration details pending verification', // TODO(diarch): publish the official record before claiming registration
+    reraRegistered: false,
     priceRange: 'Price on request', // TODO(diarch): add price band
     area: '3BHK & 4BHK plot options',
     possession: 'On request', // TODO(diarch): add possession date
-    tagline: 'RERA-registered residential plots in Naubatpur, Patna.',
+    tagline: 'Residential plots in Naubatpur, Patna.',
     metaDescription:
-      'Vaidic Village by Diarch Homes — RERA-registered residential plots in Naubatpur, Patna, with 3BHK and 4BHK plot options on a Vastu-planned layout.',
+      'Vaidic Village by Diarch Homes — residential plots in Naubatpur, Patna, with 3BHK and 4BHK plot options on a Vastu-planned layout.',
     image: IMAGES.township,
     description:
-      'Vaidic Village is a RERA-registered plotted township in Naubatpur, Patna, offering 3BHK and 4BHK plot options on a Vastu-planned layout with wide internal roads and underground utilities — ready for you to build the home you envision.',
+      'Vaidic Village is a plotted township in Naubatpur, Patna, offering 3BHK and 4BHK plot options on a Vastu-planned layout with wide internal roads and underground utilities — ready for you to build the home you envision.',
     highlights: [
       '3BHK & 4BHK plot configurations',
       'Vastu-planned plot demarcation',
-      'RERA-registered development',
+      'Registration details to be confirmed before booking',
       'Gated, fully-developed layout',
     ],
     amenities: ['Wide Roads', 'Street Lighting', 'Park', 'Gated Entry', 'Underground Cabling', 'Water Supply', 'Drainage', 'Security'],

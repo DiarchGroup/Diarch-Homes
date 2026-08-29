@@ -7,5 +7,4 @@
 /services        /projects   301!
 /home            /           301!
 
-# SPA fallback — static prerendered files are served first when they exist.
-/*               /index.html 200
+# Known routes are prerendered as real files. Unmatched paths must remain 404s.
