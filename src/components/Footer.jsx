@@ -50,7 +50,7 @@ export const Footer = () => (
         </div>
 
         <div>
-          <h4 className="subhead text-sm mb-5 text-gold">Quick Links</h4>
+          <h3 className="subhead text-sm mb-5 text-gold">Quick Links</h3>
           <ul className="space-y-3 font-body text-sm text-silver">
             {[['Home', '/'], ['About', '/about'], ['Vastu Promise', '/#vastu'], ['Contact', '/contact']].map(([l, to]) => (
               <li key={l}><Link to={to} className="hover:text-gold transition-colors">{l}</Link></li>
@@ -59,7 +59,7 @@ export const Footer = () => (
         </div>
 
         <div>
-          <h4 className="subhead text-sm mb-5 text-gold">Projects</h4>
+          <h3 className="subhead text-sm mb-5 text-gold">Projects</h3>
           <ul className="space-y-3 font-body text-sm text-silver">
             {projects.slice(0, 5).map((p) => (
               <li key={p.slug}><Link to={`/projects/${p.slug}`} className="hover:text-gold transition-colors">{p.name}</Link></li>
@@ -68,7 +68,7 @@ export const Footer = () => (
         </div>
 
         <div>
-          <h4 className="subhead text-sm mb-5 text-gold">Contact</h4>
+          <h3 className="subhead text-sm mb-5 text-gold">Contact</h3>
           <ul className="space-y-4 font-body text-sm text-silver">
             <li className="flex gap-3"><MapPin strokeWidth={1.5} className="h-5 w-5 shrink-0 text-gold" /> {SITE.addressLines.join(', ')}</li>
             <li className="flex gap-3"><Phone strokeWidth={1.5} className="h-5 w-5 shrink-0 text-gold" /> <a href={SITE.phoneHref}>{SITE.phoneDisplay}</a></li>

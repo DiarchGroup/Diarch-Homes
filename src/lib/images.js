@@ -1,11 +1,15 @@
-// Centralised AI-generated luxury imagery (frontend prototype assets)
-const BASE = 'https://static.prod-images.emergentagent.com/jobs/283cda4d-2c04-4632-b203-4fc9f9f8ae52/images';
+// Centralised luxury imagery (frontend prototype assets), self-hosted so Vite
+// fingerprints and long-caches them instead of fetching an uncached 3rd-party CDN.
+//
+// Static imports (not `new URL(x, import.meta.url)`) because the SSR build used
+// for prerendering doesn't rewrite that pattern — it leaves a literal file://
+// path in the prerendered HTML, breaking the image for crawlers and no-JS
+// visitors. A plain import is hashed correctly by both the client and SSR builds.
+import hero from '../assets/hero.webp';
+import township from '../assets/township.webp';
+import residences from '../assets/residences.webp';
+import villas from '../assets/villas.webp';
+import interior from '../assets/interior.webp';
+import founder from './profileimg.webp';
 
-export const IMAGES = {
-  hero: `${BASE}/305b3bd02a9adc74242a8f596597708033550a0c50ab2b694e41f856740e543f.png`,
-  township: `${BASE}/a59c3a12c185bc8ebb73602adc2c88d8cf67bdcb0a45e7ca899d2c389e18c134.png`,
-  residences: `${BASE}/6e3b4c6b2453c99b897156f4c04834606b60446add7c12bf038f59fb0bbe30b7.png`,
-  villas: `${BASE}/c9885bf5de81adbfc6f1ae3a647a963ced93e391b508ae8cc10701a587a819ef.png`,
-  interior: `${BASE}/2a6f98663c9a84098586d919ab66742cd750a2825d649dc855b61b06d029ad0e.png`,
-  founder: new URL('./profileimg.webp', import.meta.url).href,
-};
+export const IMAGES = { hero, township, residences, villas, interior, founder };
