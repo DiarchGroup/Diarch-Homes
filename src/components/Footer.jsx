@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { SITE } from '@/data/seo';
 
 const InstagramIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -69,9 +70,9 @@ export const Footer = () => (
         <div>
           <h4 className="subhead text-sm mb-5 text-gold">Contact</h4>
           <ul className="space-y-4 font-body text-sm text-silver">
-            <li className="flex gap-3"><MapPin strokeWidth={1.5} className="h-5 w-5 shrink-0 text-gold" /> Diarch Tower, Bailey Road, Patna, Bihar 800001</li>
-            <li className="flex gap-3"><Phone strokeWidth={1.5} className="h-5 w-5 shrink-0 text-gold" /> +91 92292 66955</li>
-            <li className="flex gap-3"><Mail strokeWidth={1.5} className="h-5 w-5 shrink-0 text-gold" /> info@diarchgroup.com</li>
+            <li className="flex gap-3"><MapPin strokeWidth={1.5} className="h-5 w-5 shrink-0 text-gold" /> {SITE.addressLines.join(', ')}</li>
+            <li className="flex gap-3"><Phone strokeWidth={1.5} className="h-5 w-5 shrink-0 text-gold" /> <a href={SITE.phoneHref}>{SITE.phoneDisplay}</a></li>
+            <li className="flex gap-3"><Mail strokeWidth={1.5} className="h-5 w-5 shrink-0 text-gold" /> <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
           </ul>
         </div>
       </div>

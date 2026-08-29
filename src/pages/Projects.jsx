@@ -25,7 +25,7 @@ export default function Projects() {
           <ScrollReveal className="max-w-3xl">
             <span className="eyebrow">Our Projects</span>
             <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-cream sm:text-5xl lg:text-6xl">
-              Eleven Locations. One Standard of Excellence.
+              Every Location. One Standard of Excellence.
             </h1>
             <p className="mt-5 max-w-xl font-body text-base text-silver">
               Explore our portfolio of Vastu-aligned townships, premium residences, and garden villas across Bihar.

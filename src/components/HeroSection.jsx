@@ -70,7 +70,11 @@ export const HeroSection = () => {
             <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[3/2] lg:aspect-auto lg:h-[54svh]">
               <img
                 src={IMAGES.hero}
-                alt="A Diarch luxury township in Bihar at dusk"
+                alt="Diarch Imperial Greens, a 42-acre luxury township in Patna, Bihar"
+                width={1600}
+                height={1000}
+                fetchPriority="high"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />

@@ -18,8 +18,11 @@ export const ProjectCard = ({ project, index = 0 }) => {
         {project.image && (
           <img
             src={project.image}
-            alt={project.name}
+            alt={`${project.name} — ${project.type.toLowerCase()} in ${project.location}`}
+            width={640}
+            height={448}
             loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
           />
         )}

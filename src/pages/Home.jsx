@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SITE } from '@/data/seo';
 import { HeroSection } from '@/components/HeroSection';
 import { ProjectCard } from '@/components/ProjectCard';
 import { TestimonialCard } from '@/components/TestimonialCard';
@@ -196,7 +197,7 @@ export default function Home() {
                 <Link to="/contact">Book a Site Visit <ArrowRight strokeWidth={1.5} className="h-4 w-4" /></Link>
               </Button>
               <Button asChild variant="emeraldOutline" size="xl">
-                <a href="https://wa.me/919229266955?text=Hello%20Diarch%20Real%20Estate" target="_blank" rel="noopener noreferrer">
+                <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">
                   <MessageCircle strokeWidth={1.5} className="h-4 w-4" /> Chat on WhatsApp
                 </a>
               </Button>
