@@ -8,7 +8,8 @@
 import founder from './profileimg.webp';
 
 // Vaidic Village Assets
-import vaidicHero from '../assets/vaidic/vaidic-hero-pro.jpg';
+import vaidicHero from '../assets/vaidic/vaidic-gate.jpg';
+import vaidicAerial from '../assets/vaidic/vaidic-aerial.jpg';
 import vaidicEntrance from '../assets/vaidic/vaidic-entrance-pro.jpg';
 import vaidicRoad from '../assets/vaidic/vaidic-road-pro.jpg';
 import vaidicGarden from '../assets/vaidic/vaidic-garden-pro.jpg';
@@ -29,6 +30,7 @@ export const VAIDIC_IMAGES = {
   sitePlan: vaidicSitePlan,
   gallery: [
     vaidicHero,
+    vaidicAerial,
     vaidicEntrance,
     vaidicRoad,
     vaidicGarden,

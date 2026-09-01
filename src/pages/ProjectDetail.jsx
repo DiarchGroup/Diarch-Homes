@@ -35,8 +35,8 @@ export default function ProjectDetail() {
       <JsonLd data={projectSchema(project)} />
       <JsonLd data={projectBreadcrumbSchema(project)} />
       {/* Full-screen hero */}
-      <section className="relative flex min-h-[48vh] items-end overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+      <section className="relative isolate flex min-h-[48vh] items-end overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <img
             src={project.image}
             alt={`${project.name}, ${project.type.toLowerCase()} in ${project.location}`}
@@ -47,8 +47,8 @@ export default function ProjectDetail() {
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/60 to-background/30" />
-        <div className="container-lux pb-16 pt-32">
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+        <div className="container-lux relative z-10 pb-16 pt-32">
           <ScrollReveal>
             <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 font-mont text-xs uppercase tracking-wider text-gold">
               <Link to="/" className="hover:text-gold-hover">Home</Link>
