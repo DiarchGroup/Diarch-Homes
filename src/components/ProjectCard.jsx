@@ -27,12 +27,21 @@ export const ProjectCard = ({ project, index = 0 }) => {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/35 to-transparent" />
-        <span className="absolute left-4 top-4 flex items-center gap-1 border border-emerald/60 bg-emerald/85 px-2.5 py-1 lapidary text-[10px] uppercase tracking-[0.18em] text-foreground backdrop-blur-sm">
-          <ShieldCheck strokeWidth={1.5} className="h-3 w-3" /> {project.reraRegistered === false ? 'LAYOUT VERIFIED' : 'RERA'}
-        </span>
-        <span className="absolute right-4 top-4 border border-gold/25 bg-background/70 px-2.5 py-1 lapidary text-[10px] uppercase tracking-[0.18em] text-silver backdrop-blur-sm">
-          {project.status}
-        </span>
+        <div className="absolute inset-x-4 top-4 flex items-start gap-2">
+          <span
+            title={project.reraRegistered ? 'RERA' : 'Registration to be confirmed'}
+            className="flex min-w-0 flex-1 items-center gap-1 truncate border border-emerald/60 bg-emerald/85 px-2.5 py-1 lapidary text-[10px] uppercase tracking-[0.18em] text-foreground backdrop-blur-sm"
+          >
+            <ShieldCheck strokeWidth={1.5} className="h-3 w-3 shrink-0" />
+            <span className="truncate">{project.reraRegistered ? 'RERA' : 'REGISTRATION TO BE CONFIRMED'}</span>
+          </span>
+          <span
+            title={project.status}
+            className="max-w-[44%] shrink-0 truncate border border-gold/25 bg-background/70 px-2.5 py-1 lapidary text-[10px] uppercase tracking-[0.18em] text-silver backdrop-blur-sm"
+          >
+            {project.status}
+          </span>
+        </div>
       </div>
 
       {/* Body */}

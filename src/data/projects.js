@@ -1,5 +1,5 @@
 // Project data for Diarch Real Estate
-import { VAIDIC_IMAGES } from '@/lib/images';
+import { ARCH_IMAGES, VAIDIC_IMAGES } from '@/lib/images';
 
 export const projects = [
   {
@@ -30,7 +30,114 @@ export const projects = [
     ],
     amenities: ['Wide Roads', 'Street Lighting', 'Park', 'Gated Entry', 'Underground Cabling', 'Water Supply', 'Drainage', 'Security'],
   },
+  {
+    slug: 'anand-lok',
+    name: 'Anand Lok',
+    location: 'Greater Patna',
+    type: 'RESIDENTIAL',
+    status: 'Current Project',
+    category: 'Residential',
+    rera: 'Registration details to be confirmed',
+    reraRegistered: false,
+    priceRange: 'Price on request',
+    area: '1292–3024 sq.ft.',
+    possession: 'On request',
+    tagline: 'Low-density residential living across 9 acres.',
+    metaDescription:
+      'Anand Lok by Diarch Homes: a low-density residential township in Greater Patna with 1292–3024 sq.ft. options.',
+    image: ARCH_IMAGES.anandLok,
+    gallery: [ARCH_IMAGES.anandLok],
+    description:
+      'Anand Lok is a low-density residential township spread across 9 acres, offering a considered setting for contemporary family living in Greater Patna.',
+    highlights: [
+      'Residential configurations from 1292–3024 sq.ft.',
+      'Low-density township across 9 acres',
+      'Greater Patna location',
+      'Project details to be confirmed before booking',
+    ],
+    amenities: [],
+  },
+  {
+    slug: 'arch-garden',
+    name: 'Arch Garden',
+    location: 'Greater Patna',
+    type: 'OFFICE SPACE',
+    status: 'Completed',
+    category: 'Office Space',
+    rera: 'Registration details to be confirmed',
+    reraRegistered: false,
+    priceRange: 'Price on request',
+    area: '1330–3024 sq.ft.',
+    possession: 'Ready to move',
+    tagline: 'Ready-to-move office space with premium plot and duplex options.',
+    metaDescription:
+      'Arch Garden by Diarch Homes: ready-to-move office space in Greater Patna with 1330–3024 sq.ft. options.',
+    image: ARCH_IMAGES.archGarden,
+    gallery: [ARCH_IMAGES.archGarden],
+    description:
+      'Arch Garden offers ready-to-move office space alongside plot and duplex options for a premium lifestyle in Greater Patna.',
+    highlights: [
+      'Office-space configurations from 1330–3024 sq.ft.',
+      'Ready-to-move project',
+      'Plot and duplex options',
+      'Completed project',
+    ],
+    amenities: [],
+  },
+  {
+    slug: 'asavari-gram',
+    name: 'Asavari Gram',
+    location: 'Patna Extension',
+    type: 'VILLA',
+    status: 'Portfolio Project',
+    category: 'Villa',
+    rera: 'Registration details to be confirmed',
+    reraRegistered: false,
+    priceRange: 'Price on request',
+    area: '1330–3024 sq.ft.',
+    possession: 'On request',
+    tagline: 'A flexible villa address for a new standard of living.',
+    metaDescription:
+      'Asavari Gram by Diarch Homes: villa options in Patna Extension with 1330–3024 sq.ft. configurations.',
+    image: ARCH_IMAGES.asavariGram,
+    gallery: [ARCH_IMAGES.asavariGram],
+    description:
+      'Asavari Gram is presented as a villa project in Patna Extension, offering flexible choices for a new standard of living.',
+    highlights: [
+      'Villa configurations from 1330–3024 sq.ft.',
+      'Flexible choice of plot options',
+      'Patna Extension location',
+      'Project details to be confirmed before booking',
+    ],
+    amenities: [],
+  },
+  {
+    slug: 'police-colony',
+    name: 'Police Colony',
+    location: 'Greater Patna',
+    type: 'TOWNSHIP PLOTS',
+    status: 'Portfolio Project',
+    category: 'Plotted Township',
+    rera: 'Registration details to be confirmed',
+    reraRegistered: false,
+    priceRange: 'Price on request',
+    area: '1361–1800 sq.ft.',
+    possession: 'On request',
+    tagline: 'A future-focused township plot opportunity in Greater Patna.',
+    metaDescription:
+      'Police Colony by Diarch Homes: township plot options in Greater Patna from 1361–1800 sq.ft.',
+    image: ARCH_IMAGES.policeColony,
+    gallery: [ARCH_IMAGES.policeColony],
+    description:
+      'Police Colony is presented as a township plot opportunity in Greater Patna, with accessible plot options for future-focused living.',
+    highlights: [
+      'Township plots from 1361–1800 sq.ft.',
+      'Greater Patna location',
+      'Residential plot opportunity',
+      'Project details to be confirmed before booking',
+    ],
+    amenities: [],
+  },
 ];
 
 export const getProjectBySlug = (slug) => projects.find((p) => p.slug === slug);
-

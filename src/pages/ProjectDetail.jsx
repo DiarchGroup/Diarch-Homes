@@ -200,20 +200,22 @@ export default function ProjectDetail() {
       </section>
 
       {/* Amenities */}
-      <section className="py-12">
-        <div className="container-lux">
-          <span className="eyebrow">Amenities</span>
-          <h2 className="mt-3 font-display text-3xl font-bold text-cream">Curated for Premium Living</h2>
-          <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {project.amenities.map((a) => (
-              <div key={a} className="flex items-center gap-3 rounded-lg border border-border bg-surface p-4">
-                <Check strokeWidth={1.5} className="h-4 w-4 shrink-0 text-gold" />
-                <span className="font-body text-sm text-cream">{a}</span>
-              </div>
-            ))}
+      {project.amenities?.length > 0 && (
+        <section className="py-12">
+          <div className="container-lux">
+            <span className="eyebrow">Amenities</span>
+            <h2 className="mt-3 font-display text-3xl font-bold text-cream">Curated for Premium Living</h2>
+            <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {project.amenities.map((a) => (
+                <div key={a} className="flex items-center gap-3 rounded-lg border border-border bg-surface p-4">
+                  <Check strokeWidth={1.5} className="h-4 w-4 shrink-0 text-gold" />
+                  <span className="font-body text-sm text-cream">{a}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Location */}
       <section className="py-12 pb-24">
