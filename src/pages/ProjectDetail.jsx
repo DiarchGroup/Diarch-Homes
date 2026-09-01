@@ -35,7 +35,7 @@ export default function ProjectDetail() {
       <JsonLd data={projectSchema(project)} />
       <JsonLd data={projectBreadcrumbSchema(project)} />
       {/* Full-screen hero */}
-      <section className="relative flex min-h-[80vh] items-end overflow-hidden">
+      <section className="relative flex min-h-[48vh] items-end overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={project.image}
