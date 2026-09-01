@@ -1,172 +1,36 @@
-// Mock project data for Diarch Real Estate (frontend prototype)
-import { IMAGES } from '@/lib/images';
+// Project data for Diarch Real Estate
+import { VAIDIC_IMAGES } from '@/lib/images';
 
 export const projects = [
   {
-    // Facts below come from the SEO fix plan (27 Aug 2026); the fields marked
-    // TODO(diarch) were not in it — confirm before launch.
     slug: 'vaidic-village',
     name: 'Vaidic Village',
     location: 'Naubatpur, Patna',
     type: 'RESIDENTIAL PLOTS',
-    status: 'Under Construction', // TODO(diarch): confirm
-    category: 'Affordable', // TODO(diarch): confirm positioning
-    rera: 'Registered — number on request', // TODO(diarch): add RERA number
-    priceRange: 'Price on request', // TODO(diarch): add price band
+    status: 'Under Construction',
+    category: 'Plotted Township',
+    rera: 'Registration details pending verification',
+    reraRegistered: false,
+    priceRange: 'Price on request',
     area: '3BHK & 4BHK plot options',
-    possession: 'On request', // TODO(diarch): add possession date
-    tagline: 'RERA-registered residential plots in Naubatpur, Patna.',
+    possession: 'On request',
+    tagline: 'Residential plots in Naubatpur, Patna.',
     metaDescription:
-      'Vaidic Village by Diarch Homes — RERA-registered residential plots in Naubatpur, Patna, with 3BHK and 4BHK plot options on a Vastu-planned layout.',
-    image: IMAGES.township,
+      'Vaidic Village by Diarch Homes: residential plots in Naubatpur, Patna, with 3BHK and 4BHK plot options on a Vastu-planned layout.',
+    image: VAIDIC_IMAGES.hero,
+    gallery: VAIDIC_IMAGES.gallery,
+    sitePlan: VAIDIC_IMAGES.sitePlan,
     description:
-      'Vaidic Village is a RERA-registered plotted township in Naubatpur, Patna, offering 3BHK and 4BHK plot options on a Vastu-planned layout with wide internal roads and underground utilities — ready for you to build the home you envision.',
+      'Vaidic Village is a plotted township in Naubatpur, Patna, offering 3BHK and 4BHK plot options on a Vastu-planned layout with wide internal roads and underground utilities, ready for you to build the home you envision.',
     highlights: [
       '3BHK & 4BHK plot configurations',
       'Vastu-planned plot demarcation',
-      'RERA-registered development',
+      'Registration details to be confirmed before booking',
       'Gated, fully-developed layout',
     ],
     amenities: ['Wide Roads', 'Street Lighting', 'Park', 'Gated Entry', 'Underground Cabling', 'Water Supply', 'Drainage', 'Security'],
   },
-  {
-    slug: 'diarch-imperial-greens',
-    name: 'Diarch Imperial Greens',
-    location: 'Patna, Bihar',
-    type: 'LUXURY TOWNSHIP',
-    status: 'Under Construction',
-    category: 'Luxury',
-    rera: 'BRERAP-2024-0481',
-    priceRange: '₹1.2 Cr – ₹3.4 Cr',
-    area: '4 & 5 BHK Villas · 2,400–4,800 sq.ft.',
-    possession: 'Dec 2026',
-    tagline: 'A 42-acre gated township engineered for generational living.',
-    image: IMAGES.township,
-    description:
-      "Imperial Greens is Bihar's most ambitious luxury township — 42 acres of Vastu-aligned villas, landscaped boulevards, and resort-grade amenities. Every residence is oriented for prosperity and built to a standard that endures generations.",
-    highlights: [
-      'North & East facing villa entrances',
-      'Central water body in the Ishan (NE) zone',
-      'Club house with spa, gym & infinity pool',
-      '70% open green & landscaped area',
-    ],
-    amenities: ['Clubhouse', 'Infinity Pool', 'Landscaped Parks', 'Gymnasium', '24x7 Security', 'EV Charging', 'Amphitheatre', 'Kids Play Zone'],
-  },
-  {
-    slug: 'diarch-skyline-residences',
-    name: 'Diarch Skyline Residences',
-    location: 'Bailey Road, Patna',
-    type: 'PREMIUM APARTMENTS',
-    status: 'Under Construction',
-    category: 'Luxury',
-    rera: 'BRERAP-2024-0517',
-    priceRange: '₹85 L – ₹1.8 Cr',
-    area: '3 & 4 BHK · 1,650–2,900 sq.ft.',
-    possession: 'Jun 2026',
-    tagline: 'Elevated living with skyline views over the Ganga plains.',
-    image: IMAGES.residences,
-    description:
-      'Skyline Residences brings vertical luxury to the heart of Patna — twin 24-storey towers with sky lounges, smart-home automation, and panoramic views, all certified Vastu-compliant and RERA registered.',
-    highlights: [
-      'Smart-home automation in every unit',
-      'Sky lounge & rooftop infinity deck',
-      'Master bedrooms in the South-West zone',
-      'Double-height entrance lobby',
-    ],
-    amenities: ['Sky Lounge', 'Concierge', 'Smart Home', 'Indoor Games', 'Yoga Deck', 'Cafe', 'Business Lounge', 'Power Backup'],
-  },
-  {
-    slug: 'diarch-emerald-vatika',
-    name: 'Diarch Emerald Vatika',
-    location: 'Gaya, Bihar',
-    type: 'GARDEN VILLAS',
-    status: 'Ready to Move',
-    category: 'Luxury',
-    rera: 'BRERAG-2023-0288',
-    priceRange: '₹95 L – ₹2.1 Cr',
-    area: '3 & 4 BHK Villas · 2,100–3,600 sq.ft.',
-    possession: 'Ready',
-    tagline: 'Garden villas wrapped in green, grounded in tradition.',
-    image: IMAGES.villas,
-    description:
-      'Emerald Vatika is a ready-to-move community of garden villas designed around nature and Vastu. Private courtyards, rainwater harvesting, and tree-lined avenues make it a sanctuary for the discerning family.',
-    highlights: [
-      'Private Vastu-aligned courtyards',
-      'Rainwater harvesting & solar-ready roofs',
-      'Pooja room in the North-East corner',
-      'Tree-lined internal avenues',
-    ],
-    amenities: ['Community Garden', 'Jogging Track', 'Temple', 'Clubhouse', 'Solar Ready', 'Rainwater Harvesting', 'Gated Security', 'Senior Zone'],
-  },
-  {
-    slug: 'diarch-heritage-enclave',
-    name: 'Diarch Heritage Enclave',
-    location: 'Muzaffarpur, Bihar',
-    type: 'PLOTTED DEVELOPMENT',
-    status: 'Ready to Move',
-    category: 'Affordable',
-    rera: 'BRERAM-2023-0142',
-    priceRange: '₹28 L – ₹62 L',
-    area: 'Plots · 1,200–2,400 sq.ft.',
-    possession: 'Ready',
-    tagline: 'Vastu-planned plots to build the home you envision.',
-    image: IMAGES.township,
-    description:
-      'Heritage Enclave offers fully-developed, Vastu-planned residential plots with wide roads, underground utilities, and a grand entrance arch — the perfect canvas for your dream home.',
-    highlights: [
-      'Vastu-oriented plot demarcation',
-      'Underground electricity & drainage',
-      '40-ft wide internal roads',
-      'Grand gated entrance arch',
-    ],
-    amenities: ['Wide Roads', 'Street Lighting', 'Park', 'Gated Entry', 'Underground Cabling', 'Water Supply', 'Drainage', 'Security'],
-  },
-  {
-    slug: 'diarch-smart-city-phase-1',
-    name: 'Diarch Smart City — Phase 1',
-    location: 'Hajipur, Bihar',
-    type: 'SMART TOWNSHIP',
-    status: 'Under Construction',
-    category: 'Luxury',
-    rera: 'BRERAH-2024-0603',
-    priceRange: '₹65 L – ₹2.6 Cr',
-    area: 'Apartments & Villas · 1,400–4,200 sq.ft.',
-    possession: 'Mar 2027',
-    tagline: 'An integrated smart township for the next generation.',
-    image: IMAGES.residences,
-    description:
-      'Diarch Smart City is a 90-acre integrated township with fibre connectivity, app-controlled security, a retail high street, and schools — a self-sustaining ecosystem built around Vastu principles.',
-    highlights: [
-      'App-controlled township security',
-      'Fibre-to-home connectivity',
-      'Integrated retail & school zones',
-      'Vastu-certified master plan',
-    ],
-    amenities: ['Retail High Street', 'School', 'Smart Security', 'Fibre Internet', 'Sports Arena', 'Hospital', 'Metro Plaza', 'Parks'],
-  },
-  {
-    slug: 'diarch-riverside-meadows',
-    name: 'Diarch Riverside Meadows',
-    location: 'Begusarai, Bihar',
-    type: 'AFFORDABLE HOMES',
-    status: 'Under Construction',
-    category: 'Affordable',
-    rera: 'BRERAB-2024-0359',
-    priceRange: '₹32 L – ₹58 L',
-    area: '2 & 3 BHK · 950–1,500 sq.ft.',
-    possession: 'Sep 2026',
-    tagline: 'Thoughtful, Vastu-aligned homes within reach.',
-    image: IMAGES.villas,
-    description:
-      'Riverside Meadows proves that premium standards need not be unaffordable. Compact, efficient, Vastu-aligned homes near the riverfront with quality amenities and RERA assurance.',
-    highlights: [
-      'Efficient North-light living spaces',
-      'Community clubhouse & park',
-      'Vastu-compliant layouts',
-      'Riverfront proximity',
-    ],
-    amenities: ['Clubhouse', 'Park', 'Play Area', 'Security', 'Power Backup', 'Water Supply', 'Parking', 'Community Hall'],
-  },
 ];
 
 export const getProjectBySlug = (slug) => projects.find((p) => p.slug === slug);
+

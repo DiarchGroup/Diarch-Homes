@@ -17,16 +17,16 @@ const Eyebrow = ({ children }) => <span className="eyebrow">{children}</span>;
 // not decoration.
 const vastuFeatures = [
   { sa: 'उत्तर', dir: 'N', title: 'North-Facing Entrances', desc: 'Thresholds opened to the north, where Vastu draws prosperity and light in.' },
-  { sa: 'ईशान', dir: 'NE', title: 'Water in the Ishan Zone', desc: 'The sacred north-east reserved for water — the source of clarity and wealth.' },
+  { sa: 'ईशान', dir: 'NE', title: 'Water in the Ishan Zone', desc: 'The sacred north-east reserved for water - the source of clarity and wealth.' },
   { sa: 'नैऋत्य', dir: 'SW', title: 'Mass in the South-West', desc: 'Weight and the master suite grounded in the south-west, for stability and rest.' },
   { sa: 'ब्रह्मस्थान', dir: 'Centre', title: 'An Open, Certified Core', desc: 'The Brahmasthan kept open and every plan certified by a Vastu specialist.' },
 ];
 
 const standards = [
-  { title: 'RERA Registered', desc: 'Every project fully registered, with complete legal transparency from booking to possession.' },
-  { title: 'Smart Township Infrastructure', desc: 'Fibre connectivity, app-controlled security, and metered smart utilities throughout.' },
+  { title: 'Project Registration', desc: 'Registration status and official details are disclosed per project before booking.' },
+  { title: 'Smart Township Infrastructure', desc: 'Fibre connectivity, app-controlled security and metered smart utilities throughout.' },
   { title: 'Vastu-Certified Design', desc: 'Layouts reviewed against the mandala and signed off by practising Vastu experts.' },
-  { title: 'Premium Amenities', desc: 'Clubhouses, pools, landscaped parks, and curated community living as standard.' },
+  { title: 'Premium Amenities', desc: 'Clubhouses, pools, landscaped parks and curated community living as standard.' },
   { title: 'On-Time Delivery', desc: 'A record of possession handed over on the date promised, project after project.' },
   { title: 'Post-Possession Support', desc: 'A dedicated relationship team that stays with you long after you move in.' },
 ];
@@ -47,7 +47,7 @@ export default function Home() {
               Addresses built to outlast their owners.
             </h2>
             <p className="mt-5 max-w-xl font-body text-base text-silver">
-              A curated set of townships, residences, and villas — each one a Vastu-aligned
+              A curated set of townships, residences and villas, each one a Vastu-aligned
               plan engineered for generational living across Bihar.
             </p>
           </ScrollReveal>
@@ -87,7 +87,7 @@ export default function Home() {
                   Vastu-certified,<br className="hidden sm:block" /> down to the doorway.
                 </h2>
                 <p className="mt-5 max-w-lg font-body text-base leading-relaxed sand-muted">
-                  Alongside RERA registration and on-time delivery, every Diarch layout is
+                  Alongside clear registration disclosures, every Diarch layout is
                   reviewed against the nine-square mandala and signed off by a Vastu specialist —
                   so orientation is one less thing for your family to worry about.
                 </p>
@@ -117,7 +117,7 @@ export default function Home() {
           <ScrollReveal className="mx-auto max-w-3xl text-center">
             <span className="lapidary text-[11px] uppercase tracking-[0.3em] text-gold">The Founder's Vision</span>
             <p className="mt-8 font-display text-2xl font-medium italic leading-snug text-cream sm:text-3xl lg:text-[2.4rem] lg:leading-[1.25]">
-              “We don't build homes. We build legacies — rooted in the land of Bihar,
+              “We don't build homes. We build legacies, rooted in the land of Bihar,
               and made to outlast the families who raise them.”
             </p>
             <div className="mx-auto mt-9 h-px w-14 bg-gold/50" />
@@ -136,7 +136,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <Eyebrow>The Diarch Standard</Eyebrow>
               <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-cream sm:text-5xl">
-                Built to a standard,<br className="hidden sm:block" /> never to a budget.
+                Built to a standard, never to a budget.
               </h2>
             </div>
           </ScrollReveal>
@@ -189,8 +189,8 @@ export default function Home() {
               Begin your legacy.
             </h2>
             <p className="mt-5 font-body text-base text-silver">
-              Book a private site visit or speak with a relationship manager — bring your
-              questions about pricing, plans, and possession.
+              Book a private site visit or speak with a relationship manager, bring your
+              questions about pricing, plans and possession.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild variant="gold" size="xl">

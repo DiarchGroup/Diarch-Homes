@@ -53,8 +53,10 @@ export const HeroSection = () => {
             <Button asChild variant="gold" size="xl" className="w-full sm:w-auto">
               <Link to="/contact">{t.cta1} <ArrowRight strokeWidth={1.5} className="h-4 w-4" /></Link>
             </Button>
-            <Button variant="goldOutline" size="xl" className="w-full sm:w-auto">
-              <Download strokeWidth={1.5} className="h-4 w-4" /> {t.cta2}
+            <Button asChild variant="goldOutline" size="xl" className="w-full sm:w-auto">
+              <Link to="/projects/vaidic-village">
+                Explore Vaidic Village <ArrowRight strokeWidth={1.5} className="h-4 w-4" />
+              </Link>
             </Button>
           </motion.div>
         </div>
@@ -70,9 +72,9 @@ export const HeroSection = () => {
             <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[3/2] lg:aspect-auto lg:h-[54svh]">
               <img
                 src={IMAGES.hero}
-                alt="Diarch Imperial Greens, a 42-acre luxury township in Patna, Bihar"
-                width={1264}
-                height={848}
+                alt="Vaidic Village plotted township in Naubatpur, Patna, Bihar"
+                width={1568}
+                height={1003}
                 fetchPriority="high"
                 decoding="async"
                 className="h-full w-full object-cover"
@@ -82,10 +84,10 @@ export const HeroSection = () => {
             {/* property plate */}
             <div className="flex items-center justify-between px-3 py-3">
               <span className="lapidary text-[11px] uppercase tracking-[0.22em] text-cream">
-                Diarch Imperial Greens
+                Vaidic Village
               </span>
               <span className="lapidary text-[11px] uppercase tracking-[0.22em] text-gold">
-                Patna · 42 acres
+                Naubatpur, Patna
               </span>
             </div>
           </div>

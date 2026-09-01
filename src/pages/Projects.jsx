@@ -4,7 +4,7 @@ import { ProjectCard } from '@/components/ProjectCard';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { projects } from '@/data/projects';
 
-const FILTERS = ['All', 'Under Construction', 'Ready to Move', 'Luxury', 'Affordable'];
+const FILTERS = ['All', 'Under Construction', 'Plotted Townships'];
 
 export default function Projects() {
   const [filter, setFilter] = useState('All');
@@ -12,6 +12,7 @@ export default function Projects() {
   const filtered = projects.filter((p) => {
     if (filter === 'All') return true;
     if (filter === 'Under Construction' || filter === 'Ready to Move') return p.status === filter;
+    if (filter === 'Plotted Townships') return p.category === 'Plotted Township' || p.type.toLowerCase().includes('plot');
     return p.category === filter;
   });
 
@@ -28,7 +29,7 @@ export default function Projects() {
               Every Location. One Standard of Excellence.
             </h1>
             <p className="mt-5 max-w-xl font-body text-base text-silver">
-              Explore our portfolio of Vastu-aligned townships, premium residences, and garden villas across Bihar.
+              Explore our portfolio of Vastu-aligned townships, premium residences and garden villas across Bihar.
             </p>
           </ScrollReveal>
         </div>

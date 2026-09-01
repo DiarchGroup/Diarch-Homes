@@ -57,7 +57,7 @@ export default function About() {
               From humble beginnings in Bihar, Ranjan Kumar Ojha built Diarch Group into one of the state&rsquo;s most respected conglomerates, spanning eleven business verticals. Diarch Real Estate is the embodiment of his lifelong belief: that a home is not merely a structure, but a vessel for prosperity, harmony and generational legacy.
             </p>
             <p className="mt-4 font-body text-base leading-relaxed text-silver">
-              Under his stewardship, every Diarch project marries modern luxury with ancient Vastu wisdom — delivering homes that are as aspirational as they are auspicious, and always registered, transparent, and built to last.
+              Under his stewardship, every Diarch project marries modern luxury with ancient Vastu wisdom, delivering homes that are as aspirational as they are auspicious and always registered, transparent and built to last.
             </p>
             <p className="mt-6 font-cormorant text-2xl italic text-gold">
               “We build legacies aligned with the cosmos and the land of Bihar.”
@@ -95,7 +95,6 @@ export default function About() {
       {/* Mission / Vision */}
       <section className="py-16 md:py-24">
         <div className="container-lux">
-          {/* Asymmetric header row */}
           <ScrollReveal>
             <div className="grid grid-cols-1 lg:grid-cols-12 lg:items-end gap-8">
               <div className="lg:col-span-3">
@@ -105,63 +104,67 @@ export default function About() {
               </div>
               <div className="lg:col-span-9">
                 <h2 className="font-display text-4xl font-bold text-cream sm:text-5xl lg:text-6xl leading-tight">
-                  The standard we hold<br className="hidden sm:block" /> every home to.
+                  The standard we hold every home to.
                 </h2>
               </div>
             </div>
           </ScrollReveal>
 
-          {/* Full-width hairline */}
           <div className="hairline mt-10 mb-0" />
 
-          {/* Four-column principles grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 num: 'i.',
                 title: 'Our Mission',
-                text: 'To craft Vastu-aligned, RERA-transparent homes that elevate the standard of luxury living in Bihar — delivered on time, every time.',
+                text: 'To craft Vastu-aligned, RERA-transparent homes that elevate the standard of luxury living in Bihar, delivered on time, every time.',
               },
               {
                 num: 'ii.',
                 title: 'Our Vision',
-                text: 'To be the most trusted name in Indian real estate, where every address is a symbol of prosperity, harmony, and enduring legacy.',
+                text: 'To be the most trusted name in Indian real estate, where every address is a symbol of prosperity, harmony and enduring legacy.',
               },
               {
                 num: 'iii.',
                 title: 'Integrity Always',
-                text: 'Every project is registered, transparent, and built with materials that meet our uncompromising quality standards. No shortcuts, ever.',
+                text: 'Every project is registered, transparent and built with materials that meet our uncompromising quality standards. No shortcuts, ever.',
               },
               {
                 num: 'iv.',
                 title: 'Bihar First',
-                text: 'We design for the people of Bihar — their aspirations, their culture, their future. Our roots are our competitive advantage.',
+                text: 'We design for the people of Bihar: their aspirations, their culture, their future. Our roots are our competitive advantage.',
               },
             ].map((p, i) => (
-              <ScrollReveal key={p.num} delay={i * 0.1} className="pt-10 pb-12 pr-8 border-r border-border/40 last:border-r-0 pl-0 sm:[&:nth-child(odd)]:pl-0 sm:[&:nth-child(even)]:pl-8 lg:pl-8 lg:first:pl-0">
-                <p className="font-serif-italic text-2xl text-gold">{p.num}</p>
-                <h3 className="mt-8 font-mont text-[11px] font-bold uppercase tracking-[0.14em] text-cream">{p.title}</h3>
-                <p className="mt-4 font-body text-sm leading-relaxed text-silver">{p.text}</p>
+              <ScrollReveal
+                key={p.title}
+                delay={i * 0.1}
+                className="group p-8 sm:p-10 border-b sm:border-b-0 sm:border-r last:border-r-0 border-gold/15 hover:bg-gold/[0.03] transition-colors duration-500"
+              >
+                <span className="font-mono text-xs text-gold/60">{p.num}</span>
+                <h3 className="mt-5 font-display text-xl font-bold text-cream group-hover:text-gold transition-colors">
+                  {p.title}
+                </h3>
+                <p className="mt-3 font-body text-sm leading-relaxed text-silver">
+                  {p.text}
+                </p>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Group overview */}
-      <section className="py-16 md:py-24">
+      {/* Parent Group */}
+      <section className="py-16 md:py-24" style={{ background: 'hsl(215 55% 11%)' }}>
         <div className="container-lux">
-          <ScrollReveal>
-            <div className="relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-emerald p-10 text-center md:p-16">
-              <Building2 strokeWidth={1.5} className="mx-auto h-10 w-10 text-gold" />
-              <h2 className="mt-5 font-display text-3xl font-bold text-cream sm:text-4xl">Part of the Diarch Group</h2>
-              <p className="mx-auto mt-4 max-w-2xl font-body text-base text-silver">
-                Diarch Real Estate is one of <span className="text-gold">11 business verticals</span> within the Diarch Group — a major Indian conglomerate headquartered in Bihar, spanning infrastructure, hospitality, energy, agriculture and more.
-              </p>
-              <Button asChild variant="gold" size="xl" className="mt-8">
-                <Link to="/projects">Explore Our Projects <ArrowRight strokeWidth={1.5} className="h-4 w-4" /></Link>
-              </Button>
-            </div>
+          <ScrollReveal className="max-w-3xl">
+            <span className="eyebrow">The Parent Group</span>
+            <h2 className="mt-5 font-display text-3xl font-bold text-cream sm:text-4xl">Part of the Diarch Group</h2>
+            <p className="mt-5 font-body text-base leading-relaxed text-silver">
+              Diarch Real Estate is one of <span className="text-gold">11 business verticals</span> within the Diarch Group, a major Indian conglomerate headquartered in Bihar, spanning infrastructure, hospitality, energy, agriculture and more.
+            </p>
+            <Button asChild variant="gold" size="xl" className="mt-8">
+              <Link to="/projects">Explore Our Projects <ArrowRight strokeWidth={1.5} className="h-4 w-4" /></Link>
+            </Button>
           </ScrollReveal>
         </div>
       </section>

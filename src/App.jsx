@@ -2,8 +2,6 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { AIChatOrb } from "@/components/AIChatOrb";
 import ScrollToTop from "@/components/ScrollToTop";
 import Seo from "@/components/Seo";
 import { Toaster } from "@/components/ui/sonner";
@@ -31,8 +29,6 @@ export function AppShell() {
         </Routes>
       </main>
       <Footer />
-      <WhatsAppButton />
-      <AIChatOrb />
       <Toaster position="top-center" richColors />
     </div>
   );

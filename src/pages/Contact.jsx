@@ -30,20 +30,46 @@ const UnderlineTextarea = ({ value, onChange, placeholder }) => (
 );
 
 export default function Contact() {
-  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', company: '', project: '', message: '' });
+  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', phone: '', company: '', project: 'vaidic-village', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
-  const handleSubmit = () => {
-    if (!form.firstName.trim() || !form.email.trim()) {
-      toast.error('Please share your name and email.');
+  const handleSubmit = async () => {
+    if (!form.firstName.trim()) {
+      toast.error('Please enter your first name.');
       return;
     }
-    setSubmitted(true);
-    toast.success('Enquiry received. Our team will reach out shortly.');
-    setForm({ firstName: '', lastName: '', email: '', company: '', project: '', message: '' });
-    setTimeout(() => setSubmitted(false), 4000);
+    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || data.error) {
+        throw new Error(data.error || 'Failed to submit enquiry');
+      }
+
+      setSubmitted(true);
+      toast.success('Enquiry received! Our team will contact you shortly.');
+      setForm({ firstName: '', lastName: '', email: '', phone: '', company: '', project: 'vaidic-village', message: '' });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      console.error(err);
+      toast.error(err.message || 'Something went wrong. Please reach out via WhatsApp or call us.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -55,20 +81,20 @@ export default function Contact() {
             {/* ── Left: form ── */}
             <ScrollReveal className="lg:col-span-7 lg:pr-20">
               <p className="font-mont text-[11px] uppercase tracking-[0.2em] text-silver">
-                — Send Us a Note
+                Send Us a Note
               </p>
               <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-cream sm:text-5xl">
                 Contact Diarch Homes in Patna, Bihar
               </h1>
               <p className="mt-4 max-w-lg font-body text-base text-silver">
-                Book a site visit, request a brochure, or speak with a relationship manager about
-                our RERA-registered projects across Bihar.
+                Book a site visit, request project plans, or speak with our relationship managers about
+                Vaidic Village in Naubatpur, Patna.
               </p>
 
               <div className="mt-14 space-y-10">
                 <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
                   <div>
-                    <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-4">First Name</p>
+                    <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-4">First Name *</p>
                     <UnderlineInput value={form.firstName} onChange={set('firstName')} placeholder="" />
                   </div>
                   <div>
@@ -77,9 +103,15 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div>
-                  <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-4">Email</p>
-                  <UnderlineInput value={form.email} onChange={set('email')} type="email" placeholder="" />
+                <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+                  <div>
+                    <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-4">Email *</p>
+                    <UnderlineInput value={form.email} onChange={set('email')} type="email" placeholder="" />
+                  </div>
+                  <div>
+                    <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-4">Phone Number</p>
+                    <UnderlineInput value={form.phone} onChange={set('phone')} type="tel" placeholder="+91" />
+                  </div>
                 </div>
 
                 <div>
@@ -91,26 +123,36 @@ export default function Contact() {
                   <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-4">Inquiry Type</p>
                   <Select value={form.project} onValueChange={(v) => setForm((f) => ({ ...f, project: v }))}>
                     <SelectTrigger className="w-full bg-transparent border-0 border-b border-border/60 rounded-none px-0 pb-3 pt-1 font-body text-base text-cream focus:ring-0 focus:border-gold/60 h-auto shadow-none">
-                      <SelectValue placeholder="General inquiry" className="text-silver/40" />
+                      <SelectValue placeholder="Select project" className="text-silver/40" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="general">General inquiry</SelectItem>
-                      {projects.map((p) => (
-                        <SelectItem key={p.slug} value={p.slug}>{p.name}</SelectItem>
-                      ))}
+                      <SelectItem value="vaidic-village">Vaidic Village (Naubatpur, Patna)</SelectItem>
+                      <SelectItem value="general">General Inquiry</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div>
                   <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-silver mb-4">How Can We Help?</p>
-                  <UnderlineTextarea value={form.message} onChange={set('message')} placeholder="" />
+                  <UnderlineTextarea value={form.message} onChange={set('message')} placeholder="e.g. Interested in 3BHK/4BHK plot site visit on Sunday..." />
                 </div>
               </div>
 
               <div className="mt-12">
-                <Button onClick={handleSubmit} variant="gold" size="xl" className="px-12">
-                  {submitted ? (<><Check strokeWidth={1.5} className="h-4 w-4" /> Sent</>) : 'Send Message'}
+                <Button
+                  onClick={handleSubmit}
+                  disabled={isSubmitting}
+                  variant="gold"
+                  size="xl"
+                  className="px-12"
+                >
+                  {isSubmitting ? (
+                    'Sending...'
+                  ) : submitted ? (
+                    <><Check strokeWidth={1.5} className="h-4 w-4" /> Message Sent</>
+                  ) : (
+                    'Send Message'
+                  )}
                 </Button>
               </div>
             </ScrollReveal>

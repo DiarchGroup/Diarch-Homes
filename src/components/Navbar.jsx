@@ -47,11 +47,11 @@ export const Navbar = () => {
     >
       <nav className="container-lux flex items-center justify-between">
         <Link to="/" className="group flex items-center gap-3">
-          <MandalaMark className="transition-transform duration-500 group-hover:rotate-90" />
-          <span className="leading-none">
-            <span className="lapidary block text-lg tracking-[0.3em] text-cream md:text-xl">DIARCH</span>
-            <span className="lapidary block text-[9px] tracking-[0.42em] text-gold">REAL ESTATE · BIHAR</span>
-          </span>
+          <img
+            src="/Diarch%20Homes%20Logo.png"
+            alt="Diarch Homes"
+            className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
         </Link>
 
         <div className="hidden lg:flex items-center gap-9">
