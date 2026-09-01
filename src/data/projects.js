@@ -1,5 +1,5 @@
 // Project data for Diarch Real Estate
-import { ARCH_IMAGES, VAIDIC_IMAGES } from '@/lib/images';
+import { ARCH_IMAGES, VAIDIC_BROCHURES, VAIDIC_IMAGES } from '@/lib/images';
 
 export const projects = [
   {
@@ -11,24 +11,44 @@ export const projects = [
     category: 'Plotted Township',
     rera: 'Registration details pending verification',
     reraRegistered: false,
-    priceRange: 'Price on request',
-    area: '3BHK & 4BHK plot options',
-    possession: 'On request',
-    tagline: 'Residential plots in Naubatpur, Patna.',
+    priceRange: '₹2,799 per sq.ft.',
+    bookingAmount: '₹2,51,000',
+    area: '1,600–1,700 sq.ft. standard plots',
+    possession: 'Phase 2 | 2026–27',
+    tagline: 'Where ancient wisdom meets eternal prosperity.',
     metaDescription:
-      'Vaidic Village by Diarch Homes: residential plots in Naubatpur, Patna, with 3BHK and 4BHK plot options on a Vastu-planned layout.',
+      'Vaidic Village Phase 2 by Diarch Homes: Vastu-compliant plots in Naubatpur, Patna, with 1,600 sq.ft., 1,700 sq.ft. and custom plot options.',
     image: VAIDIC_IMAGES.hero,
     gallery: VAIDIC_IMAGES.gallery,
     sitePlan: VAIDIC_IMAGES.sitePlan,
     description:
-      'Vaidic Village is a plotted township in Naubatpur, Patna, offering 3BHK and 4BHK plot options on a Vastu-planned layout with wide internal roads and underground utilities, ready for you to build the home you envision.',
+      'Vaidic Village Phase 2 is a Vastu-compliant plotted township in Naubatpur, Patna, presented as a premium address where Vedic principles guide plot orientation, road direction and site planning.',
     highlights: [
-      '3BHK & 4BHK plot configurations',
-      'Vastu-planned plot demarcation',
-      'Registration details to be confirmed before booking',
-      'Gated, fully-developed layout',
+      'Expanded Phase 2 master plan informed by Phase 1 learnings',
+      'Vastu audit by certified consultants, with every sector optimised',
+      '32 ft–20 ft boulevard, RCC roads and underground utilities',
+      'Clubhouse, temple zone, ayurvedic garden and LED street lighting',
+      'Near AIIMS Patna, in a fast-growing corridor',
     ],
-    amenities: ['Wide Roads', 'Street Lighting', 'Park', 'Gated Entry', 'Underground Cabling', 'Water Supply', 'Drainage', 'Security'],
+    amenities: [
+      'Gated Colony', 'Wide Roads', 'Drainage System', 'Electricity', 'Temple', 'Park',
+      '6 ft Boundary Wall', 'Swimming Pool', 'Community Hall', 'Jogging Track',
+      "Children's Play Area", '24×7 Security',
+    ],
+    brochures: VAIDIC_BROCHURES,
+    plotCategories: [
+      { name: 'Cat A', tier: 'Classic', size: '1,600 sq.ft.', vastu: 'Prosperity Flow', idealFor: 'First-home buyers and young families' },
+      { name: 'Cat B', tier: 'Premium', size: '1,700 sq.ft.', vastu: 'Wealth Flow', idealFor: 'Growing families and professionals' },
+      { name: 'Cat C', tier: 'Grand', size: 'As per need', vastu: 'Full Vastu freedom', idealFor: 'Dream-home builders and large families' },
+    ],
+    distances: [
+      { place: 'AIIMS Patna', time: '12 min' },
+      { place: 'Danapur Station', time: '15 min' },
+      { place: 'Market', time: '02 min' },
+      { place: 'Patna Airport', time: '25 min' },
+      { place: 'Petrol Pump', time: '01 min' },
+      { place: 'Proposed Ring Road', time: '05 min' },
+    ],
   },
   {
     slug: 'anand-lok',

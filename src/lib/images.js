@@ -19,6 +19,8 @@ import anandLok from '../assets/arch/anand-lok.jpg';
 import archGarden from '../assets/arch/arch-garden.jpg';
 import asavariGram from '../assets/arch/asavari-gram.jpg';
 import policeColony from '../assets/arch/police-colony.jpg';
+import vaidicPhase1Brochure from '../../Vaidic Phase 1 3000per sqft.pdf';
+import vaidicPhase2Brochure from '../../Vaidic villge Phase 2 Brochure - 2026.pdf';
 
 export const VAIDIC_IMAGES = {
   hero: vaidicHero,
@@ -44,6 +46,19 @@ export const ARCH_IMAGES = {
   asavariGram,
   policeColony,
 };
+
+export const VAIDIC_BROCHURES = [
+  {
+    label: 'Phase 2 brochure',
+    href: vaidicPhase2Brochure,
+    downloadName: 'Vaidic-Village-Phase-2-Brochure-2026.pdf',
+  },
+  {
+    label: 'Phase 1 brochure',
+    href: vaidicPhase1Brochure,
+    downloadName: 'Vaidic-Village-Phase-1-Brochure.pdf',
+  },
+];
 
 // The main landing-page image set shares the same visual language as the
 // Vaidic project gallery, so the public-facing experience stays cohesive.

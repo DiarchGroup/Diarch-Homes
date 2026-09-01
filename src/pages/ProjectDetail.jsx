@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft, MapPin, ShieldCheck, Maximize2, X, CalendarClock,
-  IndianRupee, Ruler, Compass, Check,
+  IndianRupee, Ruler, Compass, Check, Download,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { JsonLd } from '@/components/Seo';
@@ -24,6 +24,7 @@ export default function ProjectDetail() {
   const specs = [
     { icon: ShieldCheck, label: 'Configuration', value: project.area },
     { icon: IndianRupee, label: 'Price Range', value: project.priceRange },
+    ...(project.bookingAmount ? [{ icon: IndianRupee, label: 'Booking Amount', value: project.bookingAmount }] : []),
     { icon: CalendarClock, label: 'Possession', value: project.possession },
     { icon: Ruler, label: 'Type', value: project.type },
     { icon: MapPin, label: 'Location', value: project.location },
@@ -118,7 +119,7 @@ export default function ProjectDetail() {
             <h2 className="mt-3 font-display text-3xl font-bold text-cream">{project.tagline}</h2>
             <p className="mt-5 font-body text-base leading-relaxed text-silver">{project.description}</p>
 
-            <h3 className="subhead mt-10 text-base text-gold">Vastu Highlights</h3>
+            <h3 className="subhead mt-10 text-base text-gold">Key Highlights</h3>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {project.highlights.map((h) => (
                 <div key={h} className="flex gap-3 rounded-lg border border-border bg-surface p-4">
@@ -146,10 +147,59 @@ export default function ProjectDetail() {
               <Button asChild variant="gold" size="xl" className="mt-6 w-full">
                 <Link to="/contact">Book a Site Visit</Link>
               </Button>
+              {project.brochures?.length > 0 && (
+                <div className="mt-6 border-t border-border pt-5">
+                  <p className="font-mont text-[11px] uppercase tracking-wider text-silver">Download brochure</p>
+                  <div className="mt-3 grid gap-2">
+                    {project.brochures.map((brochure) => (
+                      <a
+                        key={brochure.downloadName}
+                        href={brochure.href}
+                        download={brochure.downloadName}
+                        className="inline-flex items-center justify-between gap-3 rounded-md border border-gold/30 px-3 py-2.5 font-mont text-xs text-gold transition-colors hover:bg-gold/10"
+                      >
+                        <span className="inline-flex items-center gap-2">
+                          <Download strokeWidth={1.5} className="h-4 w-4" />
+                          {brochure.label}
+                        </span>
+                        <span className="text-[10px] uppercase tracking-wider text-silver">PDF</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Plot categories */}
+      {project.plotCategories?.length > 0 && (
+        <section className="py-12">
+          <div className="container-lux">
+            <span className="eyebrow">Plot Categories</span>
+            <h2 className="mt-3 font-display text-3xl font-bold text-cream">Choose your Vastu-optimised plot</h2>
+            <div className="mt-7 grid grid-cols-1 gap-4 md:grid-cols-3">
+              {project.plotCategories.map((category) => (
+                <div key={category.name} className="rounded-2xl border border-gold/20 bg-gradient-card p-6">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="font-mont text-xs uppercase tracking-wider text-gold">{category.name}</p>
+                      <h3 className="mt-1 font-display text-2xl font-semibold text-cream">{category.tier}</h3>
+                    </div>
+                    <span className="rounded-full border border-border px-2.5 py-1 font-mont text-[10px] text-silver">{category.size}</span>
+                  </div>
+                  <div className="mt-5 space-y-3 border-t border-border pt-4 font-body text-sm text-silver">
+                    <p><span className="text-cream">Orientation:</span> East / North / West</p>
+                    <p><span className="text-cream">Vastu feature:</span> {category.vastu}</p>
+                    <p><span className="text-cream">Ideal for:</span> {category.idealFor}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Floor plan / Master Layout */}
       <section className="py-12">
@@ -222,14 +272,25 @@ export default function ProjectDetail() {
         <div className="container-lux">
           <span className="eyebrow">Location</span>
           <h2 className="mt-3 font-display text-3xl font-bold text-cream">{project.location}</h2>
-          <div className="relative mt-7 h-80 overflow-hidden rounded-2xl border border-border bg-surface-2">
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, hsl(221 58% 16%), hsl(215 55% 11%))' }} />
-            <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(hsl(44 54% 54% / 0.15) 1px, transparent 1px), linear-gradient(90deg, hsl(44 54% 54% / 0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-              <MapPin strokeWidth={1.5} className="mx-auto h-10 w-10 text-gold" />
-              <p className="mt-2 font-mont text-xs uppercase tracking-wider text-silver">Interactive Map Placeholder</p>
+          {project.distances?.length > 0 && (
+            <div className="mt-7 rounded-2xl border border-gold/20 bg-gradient-card p-6 sm:p-8">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <span className="eyebrow">Location Advantage</span>
+                  <h3 className="mt-2 font-display text-2xl font-semibold text-cream">Key destinations nearby</h3>
+                </div>
+                <span className="font-mont text-xs uppercase tracking-wider text-silver">As mentioned in brochure</span>
+              </div>
+              <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
+                {project.distances.map((distance) => (
+                  <div key={distance.place} className="flex items-center justify-between gap-3 border-b border-border/70 pb-3">
+                    <span className="font-body text-sm text-silver">{distance.place}</span>
+                    <span className="font-mont text-xs font-semibold text-gold">{distance.time}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
