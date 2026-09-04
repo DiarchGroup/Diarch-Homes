@@ -14,6 +14,12 @@ import vaidicEntrance from '../assets/vaidic/vaidic-entrance-pro.jpg';
 import vaidicRoad from '../assets/vaidic/vaidic-road-pro.jpg';
 import vaidicGarden from '../assets/vaidic/vaidic-garden-pro.jpg';
 import vaidicInterior from '../assets/vaidic/vaidic-interior-pro.jpg';
+import vaidicDevelopment from '../assets/vaidic/vaidic-13.jpg';
+import vaidicView14 from '../assets/vaidic/vaidic-14.jpg';
+import vaidicView15 from '../assets/vaidic/vaidic-15.jpg';
+import vaidicView16 from '../assets/vaidic/vaidic-16.jpg';
+import vaidicView17 from '../assets/vaidic/vaidic-17.jpg';
+import vaidicView18 from '../assets/vaidic/vaidic-18.jpg';
 import vaidicSitePlan from '../assets/vaidic/vaidic-site-plan.webp';
 import anandLok from '../assets/arch/anand-lok.jpg';
 import archGarden from '../assets/arch/arch-garden.jpg';
@@ -37,6 +43,12 @@ export const VAIDIC_IMAGES = {
     vaidicRoad,
     vaidicGarden,
     vaidicInterior,
+    vaidicDevelopment,
+    vaidicView14,
+    vaidicView15,
+    vaidicView16,
+    vaidicView17,
+    vaidicView18,
   ],
 };
 

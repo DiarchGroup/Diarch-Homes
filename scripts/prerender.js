@@ -36,6 +36,7 @@ const headFor = (route, meta) => {
     `<meta property="og:title" content="${escape(ogTitle)}">`,
     `<meta property="og:description" content="${escape(ogDescription)}">`,
     `<meta property="og:image" content="${image}">`,
+    `<meta property="og:image:alt" content="${escape(ogTitle)} — Diarch Homes">`,
     `<meta property="og:url" content="${url}">`,
     `<meta property="og:type" content="website">`,
     `<meta property="og:site_name" content="${escape(SITE.name)}">`,
@@ -43,6 +44,7 @@ const headFor = (route, meta) => {
     `<meta name="twitter:title" content="${escape(ogTitle)}">`,
     `<meta name="twitter:description" content="${escape(ogDescription)}">`,
     `<meta name="twitter:image" content="${image}">`,
+    `<meta name="twitter:image:alt" content="${escape(ogTitle)} — Diarch Homes">`,
     `<script type="application/ld+json">${JSON.stringify(organizationSchema)}</script>`,
     '<!--seo:end-->',
   ].join('\n    ');

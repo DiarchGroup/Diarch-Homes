@@ -27,7 +27,9 @@ for (const route of Object.keys(ROUTES)) {
   assert.equal((html.match(/name="description"/g) ?? []).length, 1, `${file}: one meta description`);
   assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1, `${file}: one canonical`);
   assert.ok(html.includes(`<link rel="canonical" href="${url}">`), `${file}: wrong canonical`);
-  assert.ok(html.includes('og:image'), `${file}: missing Open Graph tags`);
+  const ogImage = html.match(/<meta property="og:image" content="([^"]+)">/)?.[1] ?? '';
+  assert.ok(ogImage.startsWith(`${SITE.url}/`), `${file}: og:image must be absolute`);
+  assert.ok(html.includes('og:image:alt'), `${file}: missing Open Graph image alt`);
   assert.ok(html.includes('RealEstateAgent'), `${file}: missing JSON-LD schema`);
   assert.ok(sitemap.includes(`<loc>${url}</loc>`), `${route}: missing from sitemap.xml`);
 }

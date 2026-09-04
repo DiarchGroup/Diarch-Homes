@@ -32,6 +32,11 @@ export const SITE = {
   founded: '2014',
 };
 
+const absoluteUrl = (value) => {
+  if (!value || value.startsWith('http')) return value;
+  return `${SITE.url}${value.startsWith('/') ? value : `/${value}`}`;
+};
+
 const staticRoutes = {
   '/': {
     title: 'Diarch · Luxury Homes & Townships in Bihar',
@@ -64,7 +69,7 @@ const projectMeta = (p) => ({
   description:
     p.metaDescription ??
     `${p.tagline} ${p.area}. ${p.priceRange}. RERA ${p.rera}. Possession ${p.possession}.`,
-  image: p.image,
+  image: absoluteUrl(p.image),
 });
 
 export const ROUTES = {
@@ -100,7 +105,7 @@ export const projectSchema = (p) => ({
   name: p.name,
   description: p.description,
   url: `${SITE.url}/projects/${p.slug}`,
-  image: p.image,
+  image: [...new Set([p.image, ...(p.gallery ?? [])].map(absoluteUrl))],
   address: {
     '@type': 'PostalAddress',
     addressLocality: p.location.split(',')[0].trim(),

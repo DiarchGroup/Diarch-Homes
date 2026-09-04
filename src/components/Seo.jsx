@@ -41,12 +41,14 @@ export default function Seo() {
     property('og:title', ogTitle);
     property('og:description', ogDescription);
     property('og:image', image);
+    property('og:image:alt', `${m.title} — Diarch Homes`);
     property('og:url', url);
     property('og:type', 'website');
     meta('twitter:card', 'summary_large_image');
     meta('twitter:title', ogTitle);
     meta('twitter:description', ogDescription);
     meta('twitter:image', image);
+    meta('twitter:image:alt', `${m.title} — Diarch Homes`);
   }, [pathname]);
 
   return null;
