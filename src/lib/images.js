@@ -21,7 +21,7 @@ import vaidicView16 from '../assets/vaidic/vaidic-16.jpg';
 import vaidicView17 from '../assets/vaidic/vaidic-17.jpg';
 import vaidicView18 from '../assets/vaidic/vaidic-18.jpg';
 import vaidicSitePlan from '../assets/vaidic/vaidic-site-plan.webp';
-import vaidicWhiteGate from '../../vaidic village (2).png';
+import vaidicWhiteGate from '../../vaidic-village-white-gate.jpg';
 import anandLok from '../assets/arch/anand-lok.jpg';
 import archGarden from '../assets/arch/arch-garden.jpg';
 import asavariGram from '../assets/arch/asavari-gram.jpg';

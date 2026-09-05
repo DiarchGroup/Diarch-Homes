@@ -19,7 +19,7 @@ export default function Projects() {
   return (
     <div>
       {/* Compact hero */}
-      <section className="relative flex min-h-[50vh] items-center overflow-hidden pt-24 isolate">
+      <section className="relative flex min-h-[36vh] items-center overflow-hidden pb-14 pt-24 isolate md:pb-16">
         <div className="absolute inset-0 z-0 bg-gradient-hero" />
         <div className="absolute inset-0 z-0" style={{ background: 'radial-gradient(circle at 80% 20%, hsl(44 54% 54% / 0.14), transparent 50%)' }} />
         <div className="container-lux relative z-10">
@@ -36,7 +36,7 @@ export default function Projects() {
       </section>
 
       {/* Filter bar + grid */}
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="container-lux">
           <div className="flex flex-wrap gap-3">
             {FILTERS.map((f) => (
