@@ -21,6 +21,7 @@ import vaidicView16 from '../assets/vaidic/vaidic-16.jpg';
 import vaidicView17 from '../assets/vaidic/vaidic-17.jpg';
 import vaidicView18 from '../assets/vaidic/vaidic-18.jpg';
 import vaidicSitePlan from '../assets/vaidic/vaidic-site-plan.webp';
+import vaidicWhiteGate from '../../vaidic village (2).png';
 import anandLok from '../assets/arch/anand-lok.jpg';
 import archGarden from '../assets/arch/arch-garden.jpg';
 import asavariGram from '../assets/arch/asavari-gram.jpg';
@@ -29,14 +30,15 @@ import vaidicPhase1Brochure from '../../Vaidic Phase 1 3000per sqft.pdf';
 import vaidicPhase2Brochure from '../../Vaidic villge Phase 2 Brochure - 2026.pdf';
 
 export const VAIDIC_IMAGES = {
-  hero: vaidicHero,
-  v1: vaidicHero,
+  hero: vaidicWhiteGate,
+  v1: vaidicWhiteGate,
   v2: vaidicEntrance,
   v3: vaidicRoad,
   v4: vaidicGarden,
   v5: vaidicInterior,
   sitePlan: vaidicSitePlan,
   gallery: [
+    vaidicWhiteGate,
     vaidicHero,
     vaidicAerial,
     vaidicEntrance,
