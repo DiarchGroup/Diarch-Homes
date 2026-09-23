@@ -77,8 +77,8 @@ export const VAIDIC_BROCHURES = [
 // The main landing-page image set shares the same visual language as the
 // Vaidic project gallery, so the public-facing experience stays cohesive.
 export const IMAGES = {
-  hero: vaidicHero,
-  township: vaidicHero,
+  hero: vaidicWhiteGate,
+  township: vaidicWhiteGate,
   residences: vaidicEntrance,
   villas: vaidicGarden,
   interior: vaidicInterior,
