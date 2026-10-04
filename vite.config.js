@@ -39,9 +39,13 @@ function resendDevPlugin() {
             }
 
             const resend = new Resend(apiKey)
-            const { firstName, lastName, email, company, project, message } = data
+            const { firstName, lastName, email, phone, company, project, message } = data
             const fullName = `${firstName || ''} ${lastName || ''}`.trim()
-            const projectLabel = project === 'vaidic-village' ? 'Vaidic Village' : (project || 'General Inquiry')
+            let projectLabel = 'General Inquiry'
+            if (project === 'vaidic-village') projectLabel = 'Vaidic Village (Naubatpur, Patna)'
+            else if (project === 'mutation') projectLabel = 'Mutation / Title Transfer Desk'
+            else if (project) projectLabel = project
+
             const toEmail = env.CONTACT_RECEIVER_EMAIL || 'info@diarchhomes.com'
             const fromEmail = env.RESEND_FROM_EMAIL || 'Diarch Homes Enquiries <onboarding@resend.dev>'
 
@@ -50,13 +54,14 @@ function resendDevPlugin() {
                 <h2 style="color: #c9a96e; border-bottom: 1px solid rgba(201,169,110,0.3); padding-bottom: 8px;">New Site Visit / Project Enquiry</h2>
                 <p><strong>Name:</strong> ${fullName}</p>
                 <p><strong>Email:</strong> <a href="mailto:${email}" style="color:#c9a96e">${email}</a></p>
+                <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
                 <p><strong>Organization:</strong> ${company || 'N/A'}</p>
                 <p><strong>Inquiry / Project:</strong> ${projectLabel}</p>
                 <p><strong>Message:</strong><br/>${message || 'No additional message provided.'}</p>
               </div>
             `
 
-            const result = await resend.emails.send({
+            const sendResult = await resend.emails.send({
               from: fromEmail,
               to: [toEmail],
               replyTo: email,
@@ -64,9 +69,17 @@ function resendDevPlugin() {
               html: htmlContent,
             })
 
+            if (sendResult.error) {
+              console.error('[Resend Dev Error]', sendResult.error)
+              res.setHeader('Content-Type', 'application/json')
+              res.statusCode = sendResult.error.statusCode || 400
+              res.end(JSON.stringify({ error: sendResult.error.message || 'Failed to dispatch email' }))
+              return
+            }
+
             res.setHeader('Content-Type', 'application/json')
             res.statusCode = 200
-            res.end(JSON.stringify({ success: true, result }))
+            res.end(JSON.stringify({ success: true, result: sendResult.data }))
           } catch (err) {
             console.error('[Resend Dev Error]', err)
             res.setHeader('Content-Type', 'application/json')

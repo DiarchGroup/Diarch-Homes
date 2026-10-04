@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { toast } from 'sonner';
-import { Check } from 'lucide-react';
+import { Check, PhoneCall, ShieldAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from '@/components/ui/select';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { projects } from '@/data/projects';
 import { SITE } from '@/data/seo';
+import { IMAGES } from '@/lib/images';
 
 const UnderlineInput = ({ value, onChange, placeholder, type = 'text', className = '' }) => (
   <input
@@ -127,6 +127,7 @@ export default function Contact() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="vaidic-village">Vaidic Village (Naubatpur, Patna)</SelectItem>
+                      <SelectItem value="mutation">Mutation / Title Transfer Desk</SelectItem>
                       <SelectItem value="general">General Inquiry</SelectItem>
                     </SelectContent>
                   </Select>
@@ -160,7 +161,7 @@ export default function Contact() {
             {/* ── Right: info panel ── */}
             <ScrollReveal delay={0.2} className="lg:col-span-5 mt-16 lg:mt-0">
               <div
-                className="h-full min-h-120 p-10 lg:p-12"
+                className="h-full min-h-120 p-8 sm:p-10 lg:p-12"
                 style={{
                   background: 'hsl(215 55% 11%)',
                   borderTop: '1px solid hsl(44 54% 54% / 0.7)',
@@ -221,6 +222,53 @@ export default function Contact() {
                         className="font-mont text-[11px] uppercase tracking-[0.15em] text-gold underline underline-offset-4 hover:text-gold-hover transition-colors duration-200"
                       >
                         Instagram
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="hairline" />
+
+                  {/* Official Advisory: Land Mutation Desk */}
+                  <div className="pt-1">
+                    <div className="flex items-center justify-between mb-3">
+                      <p className="font-mont text-[10px] uppercase tracking-[0.18em] text-gold flex items-center gap-1.5">
+                        <ShieldAlert className="h-3.5 w-3.5 text-gold shrink-0" />
+                        Official Advisory · Mutation Desk
+                      </p>
+                      <span className="inline-flex items-center px-2 py-0.5 text-[9px] uppercase tracking-[0.15em] font-medium bg-gold/15 text-gold border border-gold/30">
+                        Authorized
+                      </span>
+                    </div>
+                    <p className="font-body text-xs text-silver/80 mb-3.5 leading-relaxed">
+                      For all plot title mutation inquiries and assistance, please connect exclusively with our authorized representative:
+                    </p>
+                    <div className="relative overflow-hidden border border-gold/30 bg-background/60 p-2 shadow-elev transition-all hover:border-gold/60 group">
+                      <a
+                        href="tel:+919031653902"
+                        className="block relative overflow-hidden"
+                        title="Click to call Amit Kumar (+91 9031653902) for Mutation Work"
+                      >
+                        <img
+                          src={IMAGES.mutationNotice}
+                          alt="Diarch Group Official Mutation Notice - Amit Kumar 9031653902"
+                          width={1254}
+                          height={1254}
+                          loading="lazy"
+                          className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]"
+                        />
+                      </a>
+                    </div>
+                    <div className="mt-3.5 flex items-center justify-between text-xs">
+                      <div>
+                        <span className="font-display text-cream font-medium text-sm block">Amit Kumar</span>
+                        <span className="font-mont text-[10px] uppercase tracking-[0.15em] text-silver/70">Authorized Officer</span>
+                      </div>
+                      <a
+                        href="tel:+919031653902"
+                        className="inline-flex items-center gap-1.5 font-mont text-[11px] uppercase tracking-[0.14em] text-gold border border-gold/40 px-3 py-1.5 hover:bg-gold/10 hover:border-gold transition-colors"
+                      >
+                        <PhoneCall className="h-3 w-3" />
+                        9031653902
                       </a>
                     </div>
                   </div>

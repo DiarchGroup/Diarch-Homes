@@ -10,6 +10,7 @@ import { VastuMandala } from '@/components/VastuMandala';
 import { ScrollReveal, StaggerGroup, StaggerItem } from '@/components/ScrollReveal';
 import { projects } from '@/data/projects';
 import { testimonials } from '@/data/testimonials';
+import { MutationFloatingWidget } from '@/components/MutationFloatingWidget';
 
 const Eyebrow = ({ children }) => <span className="eyebrow">{children}</span>;
 
@@ -205,6 +206,9 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Floating Mutation Advisory Widget */}
+      <MutationFloatingWidget />
     </div>
   );
 }

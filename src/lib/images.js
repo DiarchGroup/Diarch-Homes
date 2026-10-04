@@ -28,6 +28,7 @@ import asavariGram from '../assets/arch/asavari-gram.jpg';
 import policeColony from '../assets/arch/police-colony.jpg';
 import vaidicPhase1Brochure from '../../Vaidic Phase 1 3000per sqft.pdf';
 import vaidicPhase2Brochure from '../../Vaidic villge Phase 2 Brochure - 2026.pdf';
+import mutationNotice from '../assets/mutation-notice.png';
 
 export const VAIDIC_IMAGES = {
   hero: vaidicWhiteGate,
@@ -83,6 +84,7 @@ export const IMAGES = {
   villas: vaidicGarden,
   interior: vaidicInterior,
   founder,
+  mutationNotice,
   vaidic: VAIDIC_IMAGES,
   arch: ARCH_IMAGES,
 };
